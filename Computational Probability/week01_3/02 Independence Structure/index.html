@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    <title>02 Independence Structure - Computational Probability</title>
+
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+
+
+    <link href="../../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Computational Probability <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/03%2BConditioning%2Bfor%2BRandom%2BVariables/">03+Conditioning+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/Linear%20Algebra%20December%202015%20Questions%28Part%20B%29/">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01/chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01 2</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_2/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/03%2BConditioning%2Bfor%2BRandom%2BVariables/">03+Conditioning+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/Linear%20Algebra%20December%202015%20Questions%28Part%20B%29/">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_2/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_2/chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01 3</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../03%2BConditioning%2Bfor%2BRandom%2BVariables/">03+Conditioning+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li >
+    <a href="../Linear%20Algebra%20December%202015%20Questions%28Part%20B%29/">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01 4</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_4/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/Linear%20Algebra%20December%202015%20Questions%28Part%20B%29/">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_4/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_4/chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../01%20Simulating%20Coin%20Filps/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../03%2BConditioning%2Bfor%2BRandom%2BVariables/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#introduction-to-independence">Introduction to Independence</a></li>
+        
+    
+        <li class="first-level "><a href="#independet-events">Independet Events</a></li>
+        
+            <li class="second-level"><a href="#exercise-bernoulli-and-bin">Exercise: Bernoulli and Bin</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-the-soda-machine">Exercise: The Soda Machine</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-gamblers-fallacy">Exercise: Gambler's Fallacy</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#independet-random-variable">Independet Random Variable</a></li>
+        
+            <li class="second-level"><a href="#exercise-independent-random-variables">Exercise: Independent Random Variables</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#mutual-and-pairwise-independence">Mutual and Pairwise Independence</a></li>
+        
+            <li class="second-level"><a href="#exercise-mutual-vs-pairwise-independence">Exercise: Mutual vs Pairwise Independence</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="introduction-to-independence">Introduction to Independence</h2>
+<p>With a fair coin, let's say that we just tossed it five times and tails turned up all five times. Is it more likely now that we'll see heads?</p>
+<p>The answer is no because the outcome of the tosses don't tell us anything about the outcome of a new toss. This concept is referred to as “independence".</p>
+<p>We have actually already encountered independent events already, for example when we talked about two coin flips or two dice rolls. Now we develop theory for independent events and then, very soon, independent random variables. We build up to a concept called conditional independence, where two random variables become independent only after we condition on the value of a third random variable.</p>
+<p>Not only is independence an important phenomenon to understand and to help us reason about many scenarios, it will also play a pivotal role in how we can represent very large probabilistic models with very little space on a computer.</p>
+<h2 id="independet-events">Independet Events</h2>
+<p>Two events $A$ and $B$ are independet denoted by $A \perp B$ if</p>
+<p>
+<script type="math/tex; mode=display">\mathbb{P}(A \cap B) = \mathbb{p}(A) \cdot \mathbb{P}(B)</script>
+</p>
+<p><strong>Example:</strong> If we toss two coin then probability of heads up is multiple of probability of heads for each coin. </p>
+<p>In terms of conditional probability we 
+<script type="math/tex; mode=display"> \begin{align} 
+\require{cancel}\mathbb{P}(A \cap B) &= \mathbb{p}(A) \cdot \mathbb{P}(B) \\
+\cancel{\mathbb{P}(A)} \mathbb{P}(B\mid A) &= \cancel{\mathbb{P}(A)} \cdot \mathbb{P}(B) \\
+\mathbb{P}(B\mid A) &= \mathbb{P}(B)
+\end{align}</script>
+Thus if $A \perp B$ then probabiliy if $B$ given $A$ is euqal to probability of $B$.</p>
+<h3 id="exercise-bernoulli-and-bin">Exercise: Bernoulli and Bin</h3>
+<p>This problem introduces two of the most common random variables that people use in probabilistic models: the Bernoulli random variable, and the Binomial random variable. We have actually already encountered these albeit with a disguise! A Bernoulli random variable is like a biased coin flip. A Binomial random variable is like counting the number of heads for $n$ of these biased coin flips.</p>
+<p>These two distributions appear all the time in many, many application domains that use inference! We introduce them now to equip you with some vocabulary and also to let you see our first example of a random variable whose probability table can be described by only a few numbers even if the number of entries in the table can be much larger!</p>
+<p>As mentioned, a Bernoulli random variable is like a biased coin flip where probability of heads is $p$. In particular, a Bernoulli random variables is $1$ with probability $p$, and $0$ with probability $1−p$. If a random variable $X$ has this particular distribution, then we write $X\sim \text{Bernoulli}(p)$, where “$\sim$" can be read as “is distributed as" or “has distribution". Some people like to abbreviate $\text{Bernoulli}(p)$ by writing $\text{Bern}(p)$, $\text{Ber}(p)$, or even just $B(p)$.</p>
+<p>A Binomial random variable can be thought of as n independent coin flips, each with probability $p$ of heads. For a random variable $S$ that has this Binomial distribution with parameters $n$ and $p$, we denote it as $S \sim \text{Binomial}(n,p)$, read as “$S$ is distributed as Binomial with parameters $n$ and $p$". Some people might also abbreviate and instead of writing $\text{Binomial}(n,p)$, they write $\text{Binom}(n,p)$ or $\text{Bin}(n,p)$.</p>
+<p>(a) True or false: If $Y \sim \text{Binomial}(n,p)$, then $Y$ is a Bernoulli random variable.</p>
+<p><strong>Answer:</strong> FALSE</p>
+<p>(b) Let's say we have a coin that turns up heads with probability $0.6$. We flip this coin $10$ times. What is the probability of seeing the sequence HTHTTTTTHH, where H denotes heads and T denotes tails (so we have heads in the first toss, tails in the second, heads in the third, etc)? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">sequence = &quot;HTHTTTTTHH&quot;
+model = {'H': 0.6, 'T': 0.4}
+prob = 1
+for char in sequence:
+    prob *= model[char]
+
+prob    
+</code></pre>
+
+<pre><code>0.0005308416000000001
+</code></pre>
+<p>(c) In the previous part, there were 4 heads and 6 tails. Did the ordering of them matter? In other words, would your answer to the previous part be the same if, for example, instead we saw the sequence HHHHTTTTTT (or any other permutation of 4 heads and 6 tails)?</p>
+<p>[$\checkmark$] The probability stays the same so long as we have 4 heads and 6 tails. <br>
+[$\times    $] The probability is different depending on the ordering of heads and tails.</p>
+<p>(d) From the previous two parts, what we were analyzing was the same as the random variable $S \sim \text{Binomial}(10,0.6)$. Note that $S=4$ refers to the event that we see exactly 4 heads. Note that HTHTTTTTHH and HHHHTTTTTT are different outcomes of the underlying experiment of coin flipping. How many ways are there to see 4 heads in 10 tosses? (Please provide the exact answer.)</p>
+<pre><code class="python">def ncr(n, r):
+    &quot;&quot;&quot;
+    If calculates the n choose r for n &gt;= r.
+
+    &gt;&gt;&gt; ncr(10, 4)
+    210.0
+
+    &gt;&gt;&gt; ncr(4, 4)
+    1.0
+    &quot;&quot;&quot;
+    from scipy.misc import factorial 
+    return factorial(n) // (factorial(r) * factorial(n-r))
+
+if __name__ == &quot;__main__&quot;:
+    import doctest 
+    doctest.testmod()
+</code></pre>
+
+<pre><code class="python">ncr(10, 4)
+</code></pre>
+
+<pre><code>210.0
+</code></pre>
+<p>(e) Using your answers to parts (b) through (d), what is the probability that $S=4$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">prob * ncr(10, 4)
+</code></pre>
+
+<pre><code>0.11147673600000002
+</code></pre>
+<p>In general, for a random variable $S \sim \text{Binomial}(n,p)$, the reasoning used in parts (b) through (e) could be used to obtain the probability that $S=s$ for any $s∈{0,1,2,…,n}$. Importantly, what this means is that by just specifying two numbers $n$ and $p$, we know the full probability table for random variable $S$, which has $n+1$ entries! This is an example of where we could have many probability table entries yet we can fully specify the entire table using fewer numbers than the number of entries in the table.</p>
+<p>Please be sure to look at the solution to this problem after you have finished it to see the general equation for what the probability table entry $p_S(s)$ is, and also why the probability table entries sum to $1$.</p>
+<h3 id="exercise-the-soda-machine">Exercise: The Soda Machine</h3>
+<p>3 points possible (graded)
+A soda machine advertises 7 different flavors of soda. However, there is only one button for buying soda, which dispenses a flavor of the machine's choosing. Adam buys 14 sodas today, and notices that they are all either grape or root beer flavored.</p>
+<p>(a) Assuming that the soda machine actually dispenses each of its 7 flavors randomly, with equal probability, and independently each time, what is the probability that all 14 of Adam's sodas are either grape or root beer flavored? (Please be precise with at least 10 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">(2/7)**14
+</code></pre>
+
+<pre><code>2.4157243620710218e-08
+</code></pre>
+<p>(b) How would your answer to the (a) change if the machine were out of diet cola, ginger ale, so it randomly chooses one of only 5 flavors? (Please be precise with at least 10 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">(2/5)**14
+</code></pre>
+
+<pre><code>2.684354560000002e-06
+</code></pre>
+<p>(c) What if the machine only had 3 flavors: grape, root beer, and cherry? (Please be precise with at least 10 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">(2/3)**14
+</code></pre>
+
+<pre><code>0.003425487390781748
+</code></pre>
+<h3 id="exercise-gamblers-fallacy">Exercise: Gambler's Fallacy</h3>
+<p>Suppose you have a 27-sided fair die (with faces numbered $1,2,\ldots ,27$) that you get to roll 100 times. You win a prize if you roll 27 at least once. In this problem we look at what happens if you don't roll 27 for a while and see whether or not you're more likely to roll a 27 in your remaining rolls.</p>
+<p>(a) What is the probability that you roll 27 at least once out of the 100 rolls? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">1 - (26/27)**100
+</code></pre>
+
+<pre><code>0.9770407138326136
+</code></pre>
+<p>(b) Suppose you roll the die once and don't get 27. What is the probability that of the remaining 99 rolls, you will roll 27 at least once? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">1 - (26/27)**99
+</code></pre>
+
+<pre><code>0.9761576643646371
+</code></pre>
+<p>(c) Suppose you roll the die n times and don't get 27 any of those times. What is the probability that of the remaining $100−n$ rolls, you will roll 27 at least once? Express your answer in terms of n.</p>
+<p>In this part, please provide your answer as a mathematical formula (and not as Python code). Use $\hat{}$ for exponentiation, e.g., $x\hat{} 2$ denotes $x^2$. Explicitly include multiplication using $<em>$, e.g. $x</em>y$ is $xy$.</p>
+<pre><code class="python">1 - (26/27)**(100-n)
+</code></pre>
+
+<pre><code>0.9770407138326136
+</code></pre>
+<p>(d) Plot the probability in part (c) as a function of $n$ for $n=1,2,…,99$. Does this probability increase or decrease as n increases?</p>
+<p>[$\checkmark$] Probability decreases as $n$ increases <br>
+[$\times    $] Probability increases as $n$ increases</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+
+x = [i for i in range(1, 100)]
+y = [1 - (26/27)**(100-n) for n in x]
+
+plt.plot(x, y, 'g')
+plt.xlabel(&quot;No of trials without getting $27$&quot;)
+plt.ylabel(&quot;Prob of getting $27$&quot;)
+plt.show()
+</code></pre>
+
+<p><img alt="png" src="../output_25_0.png" /></p>
+<h2 id="independet-random-variable">Independet Random Variable</h2>
+<p>Two random variable $X$ and $Y$ are independent denoted by $X \perp Y$, if the joint probability distribution $p_{X,Y}$ is given by </p>
+<p>
+<script type="math/tex; mode=display">p_{X,Y} (x,y) = p_X(x)\, p_Y(y) \quad \forall x,y</script>
+</p>
+<p>Indepence roughly means "knowing one we have no information about other". Also in terms of conditioanl probability </p>
+<p>
+<script type="math/tex; mode=display">p_{X\mid Y}(x\mid y) = p_X(x) </script>
+</p>
+<h3 id="exercise-independent-random-variables">Exercise: Independent Random Variables</h3>
+<p>In this exercise, we look at how to check if two random variables are independent in Python. Please make sure that you can follow the math for what's going on and be able to do this by hand as well.</p>
+<p>Consider random variables $W, I, X$, and $Y$, where we have shown the joint probability tables $p_{W,I}$ and $p_{X,Y}$.</p>
+<p><img src="../images/images_sec-joint-rv-ex-marg.png" rel="drawing" width=400></p>
+<p>In Python:</p>
+<pre><code class="python">prob_W_I = np.array([[1/2, 0], [0, 1/6], [0, 1/3]])
+</code></pre>
+
+<p>Note that here, we are not explicitly storing the labels, but we'll keep track of them in our heads. The labels for the rows (in order of row index): sunny, rainy, snowy. The labels for the columns (in order of column index): 1, 0.</p>
+<p>We can get the marginal distributions $p_W$ and $p_I$:</p>
+<pre><code class="python">prob_W = prob_W_I.sum(axis=1)
+prob_I = prob_W_I.sum(axis=0)
+</code></pre>
+
+<p>Then if $W$ and $I$ were actually independent, then just from their marginal distributions $p_W$ and $p_I$, we would be able to compute the joint distribution with the formula:</p>
+<p>
+<script type="math/tex; mode=display">p_{W,I}(w,i)=p_W(w)\, p_I(i) \quad \forall ~w,i.</script>
+</p>
+<p>Note that variables <code>prob_W</code> and <code>prob_I</code> at this point store the probability tables $p_W$ and $p_I$ as 1D NumPy arrays, for which NumPy does not store whether each of these should be represented as a row or as a column.</p>
+<p>We could however ask NumPy to treat them as column vectors, and in particular, taking the outer product of <code>prob_W</code> and <code>prob_I</code> yields what the joint distribution would be if $W$ and $I$ were independent:</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+\begin{bmatrix}
+p_W(\text{sunny}) \\
+p_W(\text{rainy}) \\
+p_W(\text{snowy})
+\end{bmatrix}
+\begin{bmatrix}
+p_I(1) & p_I(0)
+\end{bmatrix}
+=
+\begin{bmatrix}
+p_W(\text{sunny})p_I(1) & p_W(\text{sunny})p_I(0) \\
+p_W(\text{rainy})p_I(1) & p_W(\text{rainy})p_I(0) \\
+p_W(\text{snowy})p_I(1) & p_W(\text{snowy})p_I(0)
+\end{bmatrix}.
+\end{eqnarray}</script>
+</p>
+<p>The left-hand side is an outer product, and the right-hand side is precisely the joint probability table that would result if $W$ and $I$ were independent.</p>
+<p>To compute and print the right-hand side, we do:</p>
+<pre><code class="python">print(np.outer(prob_W, prob_I))
+</code></pre>
+
+<p><strong>Question:</strong> Are $W$ and $I$ independent (compare the joint probability table we would get if they were independent with their actual joint probability table)?</p>
+<p><strong>Answer:</strong> FALSE</p>
+<pre><code class="python">from numpy import array, inf
+from numpy.linalg import norm
+prob_W_I = array([[1/2, 0], [0, 1/6], [0, 1/3]])
+prob_W = prob_W_I.sum(axis=1)
+prob_I = prob_W_I.sum(axis=0)
+# Difference between two matrix
+Δ = np.outer(prob_W, prob_I) - prob_W_I
+norm(Δ, inf)
+</code></pre>
+
+<pre><code>0.5
+</code></pre>
+<p><strong>Question:</strong> Are X and Y independent?</p>
+<p><strong>Answer:</strong> TRUE</p>
+<pre><code class="python">prob_X_Y = array([[1/4, 1/4], [1/12, 1/12], [1/6, 1/6]])
+prob_X = prob_X_Y.sum(axis=1)
+prob_Y = prob_X_Y.sum(axis=0)
+# Difference between two matrix
+Δ = np.outer(prob_X, prob_Y) - prob_X_Y
+norm(Δ, inf)
+</code></pre>
+
+<pre><code>0.0
+</code></pre>
+<h2 id="mutual-and-pairwise-independence">Mutual and Pairwise Independence</h2>
+<p>Three random variable $X, Y$ and $Z$ are <code>mutually independent</code> if </p>
+<p>
+<script type="math/tex; mode=display">p_{X,Y,Z} = p_X(x) \, p_Y(y) \, p_Z(z) </script>
+</p>
+<p>Three random variable $X,Y$ and $Z$ are <code>pairwise independence</code> if </p>
+<p>
+<script type="math/tex; mode=display">p_{I,J} = p_I \, p_J \quad \forall ~I,J \in \{X,Y,Z\}, I\neq J</script>
+</p>
+<p>Throughout this course, if we say that many random variables are independent (without saying which specific kind of independence), then we mean mutual independence, which we often also call marginal independence.</p>
+<h3 id="exercise-mutual-vs-pairwise-independence">Exercise: Mutual vs Pairwise Independence</h3>
+<p>Suppose random variables $X$ and $Y$ are independent, where $X$ is $1$ with probability $1/2$, and $-1$ otherwise. Similarly, $Y$ is also $1$ with probability $1/2$, and $-1$ otherwise. <strong>In this case, we say that $X$ and $Y$ are identically distributed since they have the same distribution</strong> (remember, just because they have the same distribution doesn't mean that they are the same random variable — here $X$ and $Y$ are independent!). Note that often in this course, we'll be seeing random variables that are independent and identically distributed (i.i.d.).</p>
+<p>Suppose we have another random variable $Z$ that is the product of $X$ and $Y$, i.e., $Z=XY$.</p>
+<p>Select all of the following that are true:</p>
+<p>[$\times$] The distributions $p_X, p_Y$, and $p_Z$ are the same. <br>
+[$\times$] The joint distributions $p_{X,Y}, p_{X,Z}$, and $p_{Y,Z}$ are the same. <br>
+[$\times$] $X, Y$, and $Z$ are pairwise independent.<br>
+[$\times$] $X, Y$, and $Z$ are mutually independent.<br></p>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Copyright (c) 2016 John Doe<br></small>
+        
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../../..';
+    </script>
+    <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

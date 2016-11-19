@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    <title>Linear Algebra December 2015 Questions(Part B) - Computational Probability</title>
+
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+
+
+    <link href="../../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Computational Probability <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/03%2BConditioning%2Bfor%2BRandom%2BVariables/">03+Conditioning+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/Linear%20Algebra%20December%202015%20Questions%28Part%20B%29/">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01/chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01/chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01 2</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_2/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/03%2BConditioning%2Bfor%2BRandom%2BVariables/">03+Conditioning+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/Linear%20Algebra%20December%202015%20Questions%28Part%20B%29/">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_2/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_2/chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_2/chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01 3</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../03%2BConditioning%2Bfor%2BRandom%2BVariables/">03+Conditioning+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Week01 4</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_4/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/04%2BHomework/">04+Homework</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/Linear%20Algebra%20December%202015%20Questions%28Part%20B%29/">Linear Algebra December 2015 Questions(Part B)</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_4/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chess</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../week01_4/chess/chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">01+Product+Rule+for+Random+Variables</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../week01_4/chess/chess/03%2BProbabilities%2Bwith%2BEvents%2Band%2BCode/">03+Probabilities+with+Events+and+Code</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../04%2BHomework/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../chess/01%2BProduct%2BRule%2Bfor%2BRandom%2BVariables/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<p><strong>Question 1:</strong> If $A$ is a $5\times 5$ real matrix with trace $15$ and if $2$ and $3$ are eigenvalues of $A$ , each with algebraic multiplicity $2$, then the determinant of $A$ is equal to</p>
+<ol>
+<li>$0$</li>
+<li>$24$</li>
+<li>$120$</li>
+<li>$180$</li>
+</ol>
+<p><strong>Answer:</strong> Out of five eigenvalues of matrix $A$ we know four $2,~2,~3,~3$. Let the last eigenvalue is $\lambda$. Then,
+<script type="math/tex; mode=display">\begin{align}& \text{ trace }A = 2+2+3+3+\lambda\\ \Rightarrow& \lambda = 15-10=5.\end{align}</script>
+Hence the determinant, will be product of eigenvalues
+<script type="math/tex; mode=display">\text{ det }A = 2\cdot 2\cdot 3\cdot 3\cdot 5=180.</script>
+</p>
+<p>Hence <strong>4</strong> is correct choice.</p>
+<hr />
+<p><strong>Question 2:</strong> For a positive integer $n$, let $P_n$ denote the vector space of polynomials in one variable $x$ with real coefficients and with degree $\leq n$. Consider the map $T:P_2 \rightarrow P_4$ defined by $T(p(x)) = p(x^2)$. Then</p>
+<ol>
+<li>$T$ is a linear transformation and dim range $(T) = 5$.</li>
+<li>$T$ is a linear transformation and dim range $(T) = 3$.</li>
+<li>$T$ is a linear transformation and dim range $(T) = 2$.</li>
+<li>$T$ is not a linear transformation.</li>
+</ol>
+<p><strong>Answer:</strong> This transformation replaces each $x$ by $x^2$. Also,
+<script type="math/tex; mode=display">\begin{align}T(\alpha p(x) + \beta q(x)) &= \alpha p(x^2) + \beta q(x^2)\\ &=\alpha T(p(x)) + \beta T(q(x))\end{align}</script>
+Hence this is a linear transformation, and
+<script type="math/tex; mode=display">\text{ ker }T = \{p(x) : p(x^2) = 0\} = \{0\}.</script>
+Hence the nullity will be zero. By rank nullity theorem, we get
+<script type="math/tex; mode=display">
+\begin{align}
+\text{ rank }T &= \text{ dim }P_2 - \text{ nullity }\\
+&= 3 - 0 \\
+&= 3
+\end{align}
+</script>
+</p>
+<p>Hence <strong>2</strong> is correct choice.</p>
+<hr />
+<p><strong>Question 3:</strong> Let $A$ be a real $3\times 4$ matrix of rank $2$. Then the rank of $A^tA$, where $A^t$ deonotes the transpose $A$, is</p>
+<ol>
+<li>exactly $2$</li>
+<li>exactly $3$</li>
+<li>exactly $4$</li>
+<li>at most $2$ but not necessarily $2$</li>
+</ol>
+<p><strong>Answer:</strong> Given that the rank of $A$ is $2$, hence the nullity of $A$ is $4-2 = 2$. Using theorem,</p>
+<blockquote>
+<p>Nullspace of $A$ and $A^TA$ are the same.</p>
+</blockquote>
+<p>We get the nullity of $A^TA$ is 2. Since $A^TA$ is $4\times 4$ matrix. Hence rank of $A^TA$ will be $4-2 = 2$.</p>
+<p>Hence <strong>1</strong> is correct choice.</p>
+<hr />
+<p><strong>Question 4:</strong>  Let $S$ denote the set of all the prime numbers $p$ with the property that the matrix
+<script type="math/tex; mode=display">
+\pmatrix{91& 31 & 0\\ 29 & 31 & 0\\ 79 & 23 & 59}
+</script>
+has an inverse in the field $\newcommand{\Z}{\mathbb{Z}}\Z/p\Z$. Then</p>
+<ol>
+<li>$S = {31}$</li>
+<li>$S = {31, ~59}$</li>
+<li>$S = {7, ~13, ~59}$</li>
+<li>$S$ is infinite</li>
+</ol>
+<p><strong>Answer:</strong> The matrix is singular, if it's determinant will be zero in that field.
+<script type="math/tex; mode=display">\begin{align}\text{ det } &= 59\times 31(91-29) \\ &= 59\times 31 \times  31 \times 2.\end{align}</script>
+The determinant will be zero in $\Z_p$ only for $p=59, ~31, ~2$. For all other primes it will be non-zero.</p>
+<p>Hence <strong>4</strong> is correct choice.</p>
+<hr />
+<p><strong>Question 5:</strong> Consider the quadratic form $Q(v) = v^tAv$, where
+<script type="math/tex; mode=display">A = \pmatrix{1&0&0&0 \\ 0&1&0&0 \\ 0&0&0&1 \\ 0&0&0&1}, v= (x,y,z,w)</script>
+Then</p>
+<ol>
+<li>$Q$ has rank $3$.</li>
+<li>$xy+z^2 = Q(P(v))$ for some invertible $4 \times 4$ real matrix $P$.</li>
+<li>$xy+y^2+ z^2 = Q(P(v))$ for some invertible $4\times 4$ real matrix $P$.</li>
+<li>$x^2+y^2-zw = Q(P(v))$ for some invertible $4\times 4$ real matrix $P$.</li>
+</ol>
+<p><strong>Answer:</strong> Here,
+<script type="math/tex; mode=display">Q(Pv) = (Pv)^tAPv = v^t(P^tAP)v </script>
+When $P$ is orthogonal, $A$ and $P^tAP$ both represent equivalent quadratic forms. Then the problem is reduced to find equivalent bilinear forms.</p>
+<hr />
+<p><strong>Question 6:</strong> Let $A \neq I_n$ be an $n \times n$ matrix such that $A^2 = A$, where $I_n$ is the identity matrix of order $n$. Which of the following statements is false?</p>
+<ol>
+<li>$(I_n - A)^2 = I_n - A$.</li>
+<li>trace $(A)=$ rank $(A)$.</li>
+<li>rank $(A)$ + rank $(I_n-A)$ = n.</li>
+<li>The eigenvalus of $A$ are each equal to $1$.</li>
+</ol>
+<p><strong>Answer:</strong> The matrix satisfies the polynomial $x^2 - x = 0\Rightarrow x(x-1) = 0$. Hence minimal polynomial is a factor of $x(x-1)$. Since this polynomial has linear factors, hence matrix is diagonalizable with eigenvalues $0$ or $1$ or both. Since $A \neq I$ then at least eigenvalues will be $0$.</p>
+<p>Hence <strong>4</strong> is correct choice.</p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Copyright (c) 2016 John Doe<br></small>
+        
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../../..';
+    </script>
+    <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
