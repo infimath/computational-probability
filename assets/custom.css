@@ -195,8 +195,3 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 pre code.python {
     background-color:floralwhite;
 }
-
-body {
-    background: url(https://developer.cdn.mozilla.net/static/img/blueprint-dark.fd85a7a074ae.png) repeat;
-    background-attachment:fixed;
-}

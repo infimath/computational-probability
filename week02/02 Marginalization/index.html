@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>02 Marginalization - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/04%20Random%20Variable/">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01%20Jointly%20Distributed%20Random%20Variables/">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03%20Conditioning%20for%20Random%20Variables/">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04%20Conditioning%20on%20Events/">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../05%20Bayes%20Theorem%20for%20Events/">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../06%20Homework/">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../01%20Jointly%20Distributed%20Random%20Variables/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../03%20Conditioning%20for%20Random%20Variables/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#marginalization">Marginalization</a></li>
+        
+            <li class="second-level"><a href="#exercise-marginalization">Exercise: Marginalization</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#marginalization-for-many-random-variables">Marginalization for Many Random Variables</a></li>
+        
+            <li class="second-level"><a href="#exercise-marginalization-for-many-random-variables">Exercise: Marginalization for Many Random Variables</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="marginalization">Marginalization</h2>
+<p>Given a joint probability table, often we'll want to know what the probability table is for just one of the random variables. We can do this by just summing or “marginalizing" out the other random variables. For example, to get the probability table for random variable $W$, we do the following:</p>
+<p><img src="../images/images_sec-joint-rv-marg-rows.png" alt="Drawing" style="width: 400px;"/></p>
+<p>We take the joint probability table (left-hand side) and compute out the row sums (which we've written in the margin).</p>
+<p>The right-hand side table is the probability table pW for random variable $W$; we call this resulting probability distribution the marginal distribution of $W$ (put another way, it is the distribution obtained by marginalizing out the random variables that aren't $W$).</p>
+<p>In terms of notation, the above marginalization procedure whereby we used the joint distribution of $W$ and $T$ to produce the marginal distribution of $W$ is written:</p>
+<p>
+<script type="math/tex; mode=display">p_{W}(w)=\sum _{t\in \mathcal{T}}p_{W,T}(w,t),</script>
+</p>
+<p>where $\mathcal{T}$ is the set of values that random variable $T$ can take on. In fact, throughout this course, we will often omit explicitly writing out the alphabet of values that a random variable takes on, e.g., writing instead</p>
+<p>
+<script type="math/tex; mode=display">p_{W}(w)=\sum _{t}p_{W,T}(w,t).</script>
+</p>
+<p>It's clear from context that we're summing over all possible values for $t$, which is going to be the values that random variable $T$ can possibly take on.</p>
+<p>As a specific example,</p>
+<p>
+<script type="math/tex; mode=display">p_{W}(\text {rainy})=\sum _{t}p_{W,T}(\text {rainy},t)=\underbrace{p_{W,T}(\text {rainy},\text {hot})}_{1/30}+\underbrace{p_{W,T}(\text {rainy},\text {cold})}_{2/15}=\frac{1}{6}.</script>
+</p>
+<p>We could similarly marginalize out random variable $W$ to get the marginal distribution $p_T$ for random variable $T$:</p>
+<p><img src="../images/images_sec-joint-rv-marg-cols.png" alt="Drawing" style="width: 400px;"/></p>
+<p>(Note that whether we write a probability table for a single variable horizontally or vertically doesn't actually matter.)</p>
+<p>As a formula, we would write:</p>
+<p>
+<script type="math/tex; mode=display">p_{T}(t)=\sum _{w}p_{W,T}(w,t).</script>
+</p>
+<p>For example,</p>
+<p>
+<script type="math/tex; mode=display">p_{T}(\text {hot})=\sum _{w}p_{W,T}(w,\text {hot})=\underbrace{p_{W,T}(\text {sunny},\text {hot})}_{3/10}+\underbrace{p_{W,T}(\text {rainy},\text {hot})}_{1/30}+\underbrace{p_{W,T}(\text {snowy},\text {hot})}_{0}=\frac{1}{3}.</script>
+</p>
+<p>In general:</p>
+<p><strong>Marginalization:</strong> Consider two random variables $X$ and $Y$ (that take on values in the sets $\mathcal{X}$ and $\mathcal{Y}$ respectively) with joint probability table $p_{X,Y}$. For any $x∈\mathcal{X}$, the marginal probability that $X=x$ is given by</p>
+<p>
+<script type="math/tex; mode=display">p_{X}(x)=\sum _{y}p_{X,Y}(x,y).</script>
+</p>
+<h3 id="exercise-marginalization">Exercise: Marginalization</h3>
+<p>Consider the following two joint probability tables.</p>
+<p><img src="../images/images_sec-joint-rv-ex-marg.png" alt="Drawing" style="width: 400px;"/></p>
+<p>Express the probability table for random variable $X$ as a Python dictionary (the keys should be the Python strings 'sunny', 'rainy', and 'snowy'). (Your answer should be the Python dictionary itself, and not the dictionary assigned to a variable, so please do not include, for instance, “prob_table =" before specifying your answer. You can use fractions. If you use decimals instead, please be accurate and use at least $5$ decimal places.)</p>
+<pre><code class="python">p_X_Y = {
+    'sunny': {1: 1/4 ,  0: 1/4 },
+    'rainy': {1: 1/12,  0: 1/12},
+    'snowy': {1: 1/6 ,  0: 1/6 }
+}
+</code></pre>
+
+<pre><code class="python">p_X = {}
+for key, value in p_X_Y.items():
+    p_X_value = 0
+    for key1, value1 in value.items():
+        p_X_value += value1
+
+    p_X[key] = p_X_value
+
+p_X
+</code></pre>
+
+<pre><code>{'rainy': 0.16666666666666666, 'snowy': 0.3333333333333333, 'sunny': 0.5}
+</code></pre>
+<p>Express the probability table for random variable $Y$ as a Python dictionary (the keys should be the Python integers $0$ and $1$). (Your answer should be the Python dictionary itself, and not the dictionary assigned to a variable, so please do not include, for instance, “prob_table =" before specifying your answer. You can use fractions. If you use decimals instead, please be accurate and use at least 5 decimal places.)</p>
+<pre><code class="python">p_Y = {}
+for key, value in p_X_Y.items():
+    for key1, value1 in value.items():
+        if key1 not in p_Y:
+            p_Y[key1] = value1
+
+        else:
+            p_Y[key1] += value1
+
+p_Y           
+</code></pre>
+
+<pre><code>{0: 0.5, 1: 0.5}
+</code></pre>
+<p>For two random variables $U$ and $V$ that take on values in the same alphabet, we say that $U$ and $V$ have the same distribution if $p_U(a)=p_V(a)$ for all $a$. For the above tables:</p>
+<p>Do $W$ and $X$ have the same distribution?</p>
+<pre><code class="python">p_W_I = {
+    'sunny': {1: 1/2},
+    'rainy': {0: 1/6},
+    'snowy': {0: 1/3}
+}
+</code></pre>
+
+<pre><code class="python">p_W = {}
+for key, value in p_W_I.items():
+    p_W_value = 0
+    for key1, value1 in value.items():
+        p_W_value += value1
+
+    p_W[key] = p_W_value
+
+p_W
+</code></pre>
+
+<pre><code>{'rainy': 0.16666666666666666, 'snowy': 0.3333333333333333, 'sunny': 0.5}
+</code></pre>
+<pre><code class="python">def is_samePMF(X, Y):
+    &quot;&quot;&quot;
+    Retrun True if both are same PMF else false
+
+    &gt;&gt;&gt; is_samePMF({5: 0.8999999999999999, 7: 0.1}, {5: 0.9, 7: 0.1})
+    True
+
+    &gt;&gt;&gt; is_samePMF({5: 0.7, 7: 0.3}, {5: 0.9, 7: 0.1})
+    False
+
+    &gt;&gt;&gt; is_samePMF({6: 0.8999999999999999, 7: 0.1}, {5: 0.9, 7: 0.1})
+    False
+
+    &gt;&gt;&gt; is_samePMF(dict(), {5: 0.9, 7: 0.1})
+    False
+
+    &gt;&gt;&gt; is_samePMF({5: 0.9, 7: 0.1}, {5: 0.1})
+    False
+    &quot;&quot;&quot;
+    if not X.keys() == Y.keys():
+        return False 
+
+    else:
+        for key, value in X.items():
+            if (abs(X[key] - Y[key]) &gt; 0.00001):
+                return False
+
+        return True
+
+if __name__ == &quot;__main__&quot;:
+    import doctest
+    doctest.testmod()
+</code></pre>
+
+<pre><code class="python">is_samePMF(p_W, p_X)
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<p>Do I and Y have the same distribution?</p>
+<pre><code class="python">p_I = {}
+for key, value in p_W_I.items():
+    for key1, value1 in value.items():
+        if key1 not in p_I:
+#             print(key1, value1)
+            p_I[key1] = value1
+
+        else:
+#             print(p_I, key1, value1)
+            p_I[key1] += value1
+
+p_I      
+</code></pre>
+
+<pre><code>{0: 0.5, 1: 0.5}
+</code></pre>
+<pre><code class="python">is_samePMF(p_I, p_Y)
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<p><strong>True or false:</strong> Consider two random variables (S,T) and (U,V), where S and U have the same distribution, and T and V have the same distribution. Then (S,T) and (U,V) have the same joint distribution.</p>
+<p>False</p>
+<h2 id="marginalization-for-many-random-variables">Marginalization for Many Random Variables</h2>
+<p>What happens when we have more than two random variables? Let's build on our earlier example and suppose that in addition to weather $W$ and temperature $T$, we also had a random variable $H$ for humidity that takes on values in the alphabet {dry, humid}. Then having a third random variable, we can draw out a 3D joint probability table for random variables $W, T$, and $H$. As an example, we could have the following:</p>
+<p><img src="../images/images_sec-joint-rv-marg-many-rv-joint-table.png" alt="Drawing" style="width: 400px;"/></p>
+<p>Here, each of the cubes/boxes stores a probability. Not visible are two of the cubes in the back left column, which for this particular example both have probability values of $0$.</p>
+<p>Then to marginalize out the humidity $H$, we would add values as follows:</p>
+<p><img src="../images/images_sec-joint-rv-marg-many-rv-marg.png" alt="Drawing" style="width: 400px;"/></p>
+<p>The result is the joint probability table for weather W and temperature $T$, shown still in 3D cubes with each cube storing a single probability.</p>
+<p>As an equation:</p>
+<p>
+<script type="math/tex; mode=display">p_{W,T}(w,t) = \sum _ h p_{W,T,H}(w, t, h).</script>
+</p>
+<p>In general, for three random variables $X, Y$, and $Z$ with joint probability table $p_{X,Y,Z}$, we have</p>
+<p>
+<script type="math/tex; mode=display">
+begin{align}
+p_{X,Y}(x,y) &=& \sum_{z} p_{X,Y,Z}(x,y,z), \\
+p_{X,Z}(x,z) &=& \sum_{y} p_{X,Y,Z}(x,y,z), \\
+p_{Y,Z}(y,z) &=& \sum_{x} p_{X,Y,Z}(x,y,z).
+\end{align}
+</script>
+</p>
+<p>Note that we can marginalize out different random variables in succession. For example, given joint probability table $p_{X,Y,Z}$, if we wanted the probability table $p_X$, we can get it by marginalizing out the two random variables $Y$ and $Z$:</p>
+<p>
+<script type="math/tex; mode=display">p_ X(x) = \sum _{y} p_{X,Y}(x,y) = \sum _{y} \Big( \sum _{z} p_{X,Y,Z}(x,y,z) \Big).</script>
+</p>
+<p>Even with more than three random variables, the idea is the same. For example, with four random variables $W, X, Y$, and $Z$ with joint probability table $p_{X,Y,Z}$, if we want the joint probability table for $X$ and $Y$, we would do the following:</p>
+<p>
+<script type="math/tex; mode=display">p_{X,Y}(x, y) = \sum_w \Big( \sum_z p_{W,X,Y,Z}(w,x,y,z) \Big).</script>
+</p>
+<h3 id="exercise-marginalization-for-many-random-variables">Exercise: Marginalization for Many Random Variables</h3>
+<p>Suppose that we have the joint probability table $p_{V,W,X,Y,Z}$ where random variable $V$ takes on $k$ values (i.e., the alphabet for $V$ has $k$ elements in it), $W$ takes on $ℓ$ values, $X$ takes on $m$ values, $Y$ takes on $n$ values, and $Z$ takes on $o$ values.</p>
+<ol>
+<li>
+<p><strong>Question:</strong> How many entries are in the joint probability table $p_{V,W,X,Y,Z}$?</p>
+<p><strong>Answer:</strong> $k \times \ell \times m \times n \times o$</p>
+<p>$ $
+2.  <strong>Question:</strong> If we marginalize out $X$ and $Z$, the resulting joint probability table is for which random    variables? (You can select multiple options.)</p>
+<p><strong>Answer:</strong> $V, W$ and $Y$</p>
+<p>$ $
+3. <strong>Question:</strong> If we marginalize out $V, Y,$ and $Z$, the resulting joint probability table has how many entries?</p>
+<p><strong>Answer:</strong> $\ell \times m$</p>
+</li>
+</ol>
+<p>Now suppose that we have the joint probability table $p_{X,Y,Z}$ for three random variables $X, Y,$ and $Z$. We want to compute the probability table $p_X$ for random variable $X$.</p>
+<ol>
+<li>
+<p><strong>True or false:</strong> If we marginalize out $Z$ first and then $Y$, or if we marginalize out $Y$ first and then $Z$, we get the same answer for the probability table $p_X$. In other words, we have</p>
+<p>
+<script type="math/tex; mode=display">p_X(x) = \sum _y \Big( \sum_z p_{X,Y,Z}(x,y,z)\Big) = \sum_z \Big( \sum_y p_{X,Y,Z}(x,y,z) \Big).</script>
+</p>
+<p><strong>Answer:</strong> True</p>
+</li>
+</ol>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

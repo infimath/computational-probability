@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>01 Product Rule for Random Variables - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/04%20Random%20Variable/">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week02/01%20Jointly%20Distributed%20Random%20Variables/">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/02%20Marginalization/">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/03%20Conditioning%20for%20Random%20Variables/">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/04%20Conditioning%20on%20Events/">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/05%20Bayes%20Theorem%20for%20Events/">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/06%20Homework/">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../../week02/06%20Homework/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../02%20Independence%20Structure/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#product-rule-for-random-variables">Product Rule for Random Variables</a></li>
+        
+    
+        <li class="first-level "><a href="#product-rule-for-random-variables_1">Product Rule for Random Variables</a></li>
+        
+            <li class="second-level"><a href="#more-than-2-random-variable">More than 2 random variable</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-the-product-rule-for-random-variables-medical-diagnosis-revisited">Exercise: The Product Rule for Random Variables - Medical Diagnosis Revisited</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#bayes-rule-for-random-variable">Baye's Rule for Random Variable</a></li>
+        
+    
+        <li class="first-level "><a href="#bayes-theorem-for-random-variables-a-computational-view">BAYES' THEOREM FOR RANDOM VARIABLES: A COMPUTATIONAL VIEW</a></li>
+        
+            <li class="second-level"><a href="#maximum-a-posteriori-map-estimation">MAXIMUM A POSTERIORI (MAP) ESTIMATION</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-bayes-theorem-for-random-variables-medical-diagnosis-continued">Exercise: Bayes' Theorem for Random Variables - Medical Diagnosis, Continued</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-complexity-of-computing-bayes-theorem-for-random-variables">Exercise: Complexity of Computing Bayes' Theorem for Random Variables</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="product-rule-for-random-variables">Product Rule for Random Variables</h2>
+<p>We introduced inference in the context of random variables, where there was a simple way to visualize what was going on in terms of joint probability tables. Marginalization referred to summing out rows or columns. Conditioning referred to taking a slice of the table and renormalizing so entries within that slice summed to 1. We then saw a more general story in terms of events. In fact, we saw that for many inference problems, using random variables to solve the problem is not necessary – reasoning with events was enough! A powerful tool we saw was Bayes' theorem.</p>
+<p>We now return to random variables and build up to Bayes' theorem for random variables. This machinery will be extremely important as it will be how we automate inference for much larger problems in the later sections of the course, where we can have a large number of random variables at play, and a large amount of observations that we need to incorporate into our inference.</p>
+<h2 id="product-rule-for-random-variables_1">Product Rule for Random Variables</h2>
+<p>We know that product rule for event is 
+<script type="math/tex; mode=display">\mathbb {P}(\mathcal{A} \cap \mathcal{B}) = \mathbb {P}(\mathcal{A}) \mathbb {P}(\mathcal{A} | \mathcal{B})</script>
+Similarly the product rule for random varaible will be given by follwing formula if $p_Y(y) \neq 0$.
+<script type="math/tex; mode=display">\begin{align}
+    p_{x|y}(x|y) &= \frac{p_{X,Y}(x,y)}{p_Y(y)} \\
+                 &\Downarrow      \\
+    p_{X,Y}(x,y) &= p_Y(y) \, p_{x|y}(x|y)
+\end{align}</script>
+</p>
+<!-- Note: $p_Y(y) = 0 \Rightarrow p_{x|y}(x|y)=0$ -->
+
+<p>In general the formula for joint probabiliy distribution is given by</p>
+<p>
+<script type="math/tex; mode=display">  p_{X,Y}(x,y) = \begin{cases}
+       p_Y(y) \, p_{x|y}(x|y) & \mbox{if } p_Y(y) > 0 \\
+       0                      & \mbox{if } p_Y(y) = 0
+       \end{cases}
+</script>
+</p>
+<h3 id="more-than-2-random-variable">More than 2 random variable</h3>
+<p>Suppose we have have three random variable then we can think any two as one random variable, for example trat last two as one random variable we get </p>
+<p>
+<script type="math/tex; mode=display">\begin{align}p_{X_1, X_2, X_3}(x_1, x_2, x_3) 
+&= p_{X_1}(x_1)p_{X_2, X_3|X_1}(x_2, x_3|x_1) \\ 
+&= p_{X_1}(x_1)p_{X2|X_1}(x_2|x_1)p_{X_3|X_1,X_2}(x_3|x_1,x_2) 
+\end{align}</script>
+</p>
+<p>We can genrealize the formula as follows,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}p_{X_1, X_2,\ldots, X_N}(x_1, x_2,\ldots,x_N) 
+&= p_{X_1}(x_1) p_{X_2,\ldots, X_N|X_1}(x_2,\ldots, x_N|x_1) \\
+&= p_{X_1}(x_1) p_{X_2|X_1}(x_2|x_1) p_{X_3,\ldots,X_N|X_1, X_2}(x_3,\ldots,x_N|x_1,x_2) \\
+&= p_{X_1}(x_1) p_{X_2|X_1}(x_2|x_1) \cdots p_{X_N|X_1, \ldots, X_{N-1}}(x_n|x_1,\ldots,x_{N-1})
+\end{align}</script>
+</p>
+<h3 id="exercise-the-product-rule-for-random-variables-medical-diagnosis-revisited">Exercise: The Product Rule for Random Variables - Medical Diagnosis Revisited</h3>
+<p>Let's revisit the medical diagnosis problem we saw earlier. We now use random variables to construct a joint probability table.</p>
+<p>Let random variable $X$ represent the patient's condition — whether “healthy" or “infected", with the following distribution for $X$:</p>
+<p><img src="..\images\images_sec-product-rule-rv-prior.png" rel="drawing" width=200 ></p>
+<p>Meanwhile, the test outcome $Y$ for whether the patient is infected is either “positive" (for the disease) or “negative". As before, the test is $99\%$ accurate, which means that the conditional probability table for $Y$ given $X$ is as follows (note that we also show how to write things out as a single table):</p>
+<p><img src="..\images\images_sec-product-rule-rv-likelihood.png" rel="drawing" width=450 ></p>
+<p>Using the product rule for random variables, what are the four entries for the joint probability table? Please provide the exact answer for these four quantities.</p>
+<p>$p_{X,Y}(\text {healthy}, \text {positive}) = p_X(\text {healthy})~p_{Y|X}(\text {positive}~|~\text {healthy})$  </p>
+<pre><code class="python">prior_or_p_X = {
+    &quot;healthy&quot; : 0.999,
+    &quot;infected&quot;: 0.001
+}
+
+p_Y_given_X = {
+    ('positive', 'healthy' ): 0.01,
+    ('positive', 'infected'): 0.99,
+    ('negative', 'healthy' ): 0.99,
+    ('negative', 'infected'): 0.01
+}
+
+# p_X_Y stores the joint probability dist. of X and Y
+p_X_Y = {} 
+for key, values in p_Y_given_X.items():
+    p_X_Y[key[::-1]] = values * prior_or_p_X[key[1]]
+
+p_X_Y    
+</code></pre>
+
+<pre><code>{('healthy', 'negative'): 0.98901,
+ ('healthy', 'positive'): 0.00999,
+ ('infected', 'negative'): 1e-05,
+ ('infected', 'positive'): 0.00099}
+</code></pre>
+<pre><code class="python">print(&quot;{0:.5f}&quot;.format(p_X_Y[('healthy', 'positive')]))
+</code></pre>
+
+<pre><code>0.00999
+</code></pre>
+<p>$p_{X,Y}(\text {healthy}, \text {negative}) = $</p>
+<pre><code class="python">print(&quot;{0:.5f}&quot;.format(p_X_Y[('healthy', 'negative')]))
+</code></pre>
+
+<pre><code>0.98901
+</code></pre>
+<p>$p_{X,Y}(\text {infected}, \text {positive}) =$</p>
+<pre><code class="python">print(&quot;{0:.5f}&quot;.format(p_X_Y[('infected', 'positive')]))
+</code></pre>
+
+<pre><code>0.00099
+</code></pre>
+<p>$p_{X,Y}(\text {infected}, \text {negative}) =$</p>
+<pre><code class="python">print(&quot;{0:.5f}&quot;.format(p_X_Y[('infected', 'negative')]))
+</code></pre>
+
+<pre><code>0.00001
+</code></pre>
+<h2 id="bayes-rule-for-random-variable">Baye's Rule for Random Variable</h2>
+<p>In inference, what we want to reason about is some unknown random variable $X$, where we get to observe some other random variable $Y$, and we have some model for how $X$ and $Y$ relate. Specifically, suppose that we have some “prior" distribution $p_X$ for $X$; this prior distribution encodes what we believe to be likely or unlikely values that $X$ takes on, before we actually have any observations. We also suppose we have a “likelihood" distribution $p_{Y∣X}$.</p>
+<p><img src="..\images\infering_x_from_y.jpg" rel="drawing" width=300 /></p>
+<p>After observing that $Y$ takes on a specific value $y$, our “belief" of what $X$ given $Y=y$ is now given by what's called the “posterior" distribution $p_{X∣Y}(⋅∣y)$. Put another way, we keep track of a probability distribution that tells us how plausible we think different values $X$ can take on are. When we observe data $Y$ that can help us reason about $X$, we proceed to either upweight or downweight how plausible we think different values $X$ can take on are, making sure that we end up with a probability distribution giving us our updated belief of what $X$ can be.</p>
+<p>Thus, once we have observed $Y=y$, our belief of what $X$ is changes from the prior $p_X$ to the posterior $p_{X∣Y}(⋅∣y)$.</p>
+<p>Bayes' theorem (also called Bayes' rule or Bayes' law) for random variables explicitly tells us how to compute the posterior distribution $p_{X∣Y}(⋅∣y)$, i.e., how to weight each possible value that random variable $X$ can take on, once we've observed $Y=y$. Bayes' theorem is the main workhorse of numerous inference algorithms and will show up many times throughout the course.</p>
+<p><strong>Bayes' theorem:</strong> Suppose that $y$ is a value that random variable $Y$ can take on, and $p_Y(y)&gt;0$. Then</p>
+<p>
+<script type="math/tex; mode=display">p_{X\mid Y}(x\mid y)=\frac{p_{X}(x)p_{Y\mid X}(y\mid x)}{\sum _{ x'}p_{X}( x')p_{Y\mid X}(y\mid x')}</script>
+</p>
+<p>for all values $x$ that random variable $X$ can take on.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+</div>
+<p>Remember that $p_{Y∣X}(⋅∣x)$ could be undefined but this isn't an issue since this happens precisely when     $p_X(x)=0$, and we know that $p_{X,Y}(x,y)=0$ (for every $y$) whenever $p_X(x)=0$.</p>
+<p>Proof: We have</p>
+<p>
+<script type="math/tex; mode=display">p_{X\mid Y}(x\mid y)\overset {(a)}{=}\frac{p_{X,Y}(x,y)}{p_{Y}(y)}\overset {(b)}{=}\frac{p_{X}(x)p_{Y\mid X}  (y\mid x)}{p_{Y}(y)}\overset {(c)}{=}\frac{p_{X}(x)p_{Y\mid X}(y\mid x)}{\sum _{ x'}p_{X,Y}( x',y)}\overset {(d)}  {=}\frac{p_{X}(x)p_{Y\mid X}(y\mid x)}{\sum _{ x'}p_{X}( x')p_{Y\mid X}(y\mid x')},</script>
+</p>
+<p>where step (a) uses the definition of conditional probability (this step requires $p_Y(y)&gt;0$, step (b) uses the  product rule (recall that for notational convenience we're not separately writing out the case when $p_X(x)=0$, step (c) uses the formula for marginalization, and step (d) uses the product rule (again, for notational convenience, we're not separately writing out the case when $p_X(x′)=0$. </p>
+<h2 id="bayes-theorem-for-random-variables-a-computational-view">BAYES' THEOREM FOR RANDOM VARIABLES: A COMPUTATIONAL VIEW</h2>
+<p>Computationally, Bayes' theorem can be thought of as a two-step procedure. Once we have observed $Y=y$:</p>
+<ol>
+<li>
+<p>For each value $x$ that random variable $X$ can take on, initially we believed that $X=x$ with a score of $p_X(x)$, which could be thought of as how plausible we thought ahead of time that $X=x$. However now that we have observed $Y=y$, we weight the score $p_X(x)$ by a factor $p_{Y∣X}(y∣x)$, so</p>
+<p>
+<script type="math/tex; mode=display">\text {new belief for how plausible }X=x\text { is:}\quad \alpha (x\mid y)\triangleq p_{X}(x)p_{Y\mid X}(y\mid x),</script>
+</p>
+<p>where we have defined a new table $α(⋅∣y)$ which is not a probability table, since when we put in the weights, the new beliefs are no longer guaranteed to sum to $1$ (i.e., $\sum _{x}\alpha (x\mid y)$ might not equal $1$)! $α(⋅∣y)$ is an unnormalized posterior distribution!</p>
+<p>Also, if $p_X(x)$ is already $0$, then as we already mentioned a few times, $p_{Y∣X}(y∣x)$ is undefined, but this case isn't a problem: no weighting is needed since an impossible outcome stays impossible.</p>
+<p>To make things concrete, here is an example from the medical diagnosis problem where we observe $Y = \text {positive}$:</p>
+<p><img src="..\images\images_sec-bayes-computational-view.png" rel="drawing" width=400 /></p>
+</li>
+<li>
+<p>We fix the fact that the unnormalized posterior table $α(⋅∣y)$ isn't guaranteed to sum to $1$ by renormalizing:</p>
+<p>
+<script type="math/tex; mode=display">p_{X\mid Y}(x\mid y)=\frac{\alpha (x\mid y)}{\sum _{ x'}\alpha ( x'\mid y)}=\frac{p_{X}(x)p_{Y\mid X}(y\mid x)}{\sum _{ x'}p_{X}( x')p_{Y\mid X}(y\mid x')}.</script>
+</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Some times we won't actually care about doing this second renormalization step because we will only be   interested in what value that $X$ takes on is more plausible relative to others; while we could always do the renormalization, if we just want to see which value of $x$ yields the highest entry in the unnormalized table $α(⋅∣y)$, we could find this value of x without renormalizing!</p>
+<h3 id="maximum-a-posteriori-map-estimation">MAXIMUM A POSTERIORI (MAP) ESTIMATION</h3>
+<p>For a hidden random variable $X$ that we are inferring, and given observation $Y=y$, we have been talking about computing the posterior distribution $p_{X∣Y}(⋅|y)$ using Bayes' rule. <code>The posterior is a distribution for what we are inferring</code>. Often times, we want to report which particular value of $X$ actually achieves the highest posterior probability, i.e., the most probable value $x$ that $X$ can take on given that we have observed $Y=y$.</p>
+<p>The value that $X$ can take on that maximizes the posterior distribution is called the maximum a posteriori (MAP) estimate of $X$ given $Y=y$. We denote the MAP estimate by $\widehat{x}_{\text {MAP}}(y)$, where we make it clear that it depends on what the observed $y$ is. Mathematically, we write</p>
+<p>
+<script type="math/tex; mode=display">\widehat{x}_{\text {MAP}}(y) = \arg \max _ x p_{X \mid Y}(x | y).</script>
+</p>
+<p>Note that if we didn't include the “arg" before the “max", then we would just be finding the highest posterior probability rather than which value–or “argument"–x actually achieves the highest posterior probability.</p>
+<p>In general, there could be ties, i.e., multiple values that $X$ can take on are able to achieve the best possible posterior probability.</p>
+<h3 id="exercise-bayes-theorem-for-random-variables-medical-diagnosis-continued">Exercise: Bayes' Theorem for Random Variables - Medical Diagnosis, Continued</h3>
+<p>Recall the medical diagnosis setup from before, summarized in these tables:</p>
+<p><img src="..\images\images_sec-product-rule-rv-prior.png" rel="drawing" width=300 />
+<img src="..\images\images_sec-bayes-theorem-rv-cpt.png" rel="drawing" width=300 /></p>
+<p>Recall that Bayes' theorem is given by</p>
+<p>
+<script type="math/tex; mode=display">p_{X\mid Y}(x\mid y)=\frac{p_{X}(x)p_{Y\mid X}(y\mid x)}{\sum _{ x'}p_{X}( x')p_{Y\mid X}(y\mid x')}</script>
+</p>
+<p>for all values $x$ that random variable $X$ can take on.</p>
+<p>Use Bayes' theorem to compute the following probabilities: (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">prior_or_p_X = {
+    &quot;healthy&quot; : 0.999,
+    &quot;infected&quot;: 0.001
+}
+
+p_Y_given_X = {
+    ('positive', 'healthy' ): 0.01,
+    ('positive', 'infected'): 0.99,
+    ('negative', 'healthy' ): 0.99,
+    ('negative', 'infected'): 0.01
+}
+
+# p_X_Y stores the joint probabilty distribution of X and Y
+p_X_Y = {}
+for key, values in p_Y_given_X.items():
+    p_X_Y[key[::-1]] = values * prior_or_p_X[key[1]]
+
+
+# p_Y stores the marginal probabilty distribution Y    
+p_Y = {}
+for key, values in p_X_Y.items():
+    if key[1] in p_Y:
+        p_Y[key[1]] += values
+
+    else:
+        p_Y[key[1]] = values
+
+# p_X_given_Y stores the conditional probability dist. of X given Y.         
+p_X_given_Y = {}
+for key, values in p_X_Y.items():
+    p_X_given_Y[key] = values / p_Y[key[1]]
+
+p_X_given_Y      
+</code></pre>
+
+<pre><code>{('healthy', 'negative'): 0.9999898889810116,
+ ('healthy', 'positive'): 0.9098360655737705,
+ ('infected', 'negative'): 1.0111018988493663e-05,
+ ('infected', 'positive'): 0.09016393442622951}
+</code></pre>
+<p>$p_{X\mid Y}(\text {healthy}\mid \text {positive}) = $  </p>
+<pre><code class="python">print(&quot;{0:.5f}&quot;.format(p_X_given_Y [('healthy', 'positive')]))
+</code></pre>
+
+<pre><code>0.90984
+</code></pre>
+<p>$p_{X\mid Y}(\text {healthy}\mid \text {negative}) =$</p>
+<pre><code class="python">print(&quot;{0:.5f}&quot;.format(p_X_given_Y [('healthy', 'negative')]))
+</code></pre>
+
+<pre><code>0.99999
+</code></pre>
+<p>What is the MAP estimate for $X$ given $Y = \text{positive}$?</p>
+<pre><code class="python">comp = 0
+MAP = &quot;&quot;
+for key, val in p_X_given_Y.items():
+    if 'positive' in key and comp &lt; val:
+        comp = val
+        MAP = key[0]
+
+print(MAP)
+</code></pre>
+
+<pre><code>healthy
+</code></pre>
+<p>What is the MAP estimate for $X$ given $Y=\text{negative}$?</p>
+<pre><code class="python">comp = 0
+MAP = &quot;&quot;
+for key, val in p_X_given_Y.items():
+    if 'negative' in key and comp &lt; val:
+        comp = val
+        MAP = key[0]
+
+print(MAP) 
+</code></pre>
+
+<pre><code>healthy
+</code></pre>
+<h3 id="exercise-complexity-of-computing-bayes-theorem-for-random-variables">Exercise: Complexity of Computing Bayes' Theorem for Random Variables</h3>
+<p>This exercise is extremely important and gets at how expensive it is to compute a posterior distribution when we have many quantities we want to infer.</p>
+<p>Consider when we have $N$ random variables $X_1, \dots , X_ N$ with joint probability distribution $p_{X_1, \dots , X_ N}$, and where we have an observation $Y$ related to $X_1, \dots , X_ N$ through the known conditional probability table $p_{Y\mid X_1, \dots , X_ N}$. Treating $X=(X_1, \dots , X_ N)$ as one big random variable, we can apply Bayes' theorem to get</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+&& p_{X_1, X_2, \dots, X_N \mid Y}(x_1, x_2, \dots, x_N \mid y) \\
+&&
+= \frac{p_{X_1, X_2, \dots, X_N}(x_1, x_2, \dots, x_N)
+        p_{Y\mid X_1, X_2, \dots, X_N}(y\mid x_1, x_2, \dots, x_N)}
+       {\sum_{x_1'}
+        \sum_{x_2'}
+        \cdots
+        \sum_{x_N'}
+          p_{X}(x_1',
+                x_2',
+                \dots,
+                x_N')
+          p_{Y\mid X_1, X_2, \dots, X_N}(y\mid x_1',
+                x_2',
+                \dots,
+                x_N')}.
+\end{eqnarray}</script>
+</p>
+<p>Suppose each $X_i$ takes on one of $k$ values. In the denominator, how many terms are we summing together? Express your answer in terms of $k$ and $N$.</p>
+<p>In this part, please provide your answer as a mathematical formula (and not as Python code). Use "$\hat{}$" for exponentiation, e.g., $x\hat{}2$ to denotes $x^2$. Explicitly include multiplication using $<em>$, e.g. $x</em>y$ is $xy$.</p>
+<p><strong>Answer:</strong> Here we have $k$ choices of $X_1$ and $k$ choices of $X_2$ and so on. Hence total number of terms will be $k^N$.</p>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

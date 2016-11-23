@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>03 Conditioning for Random Variables - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/04%20Random%20Variable/">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01%20Jointly%20Distributed%20Random%20Variables/">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02%20Marginalization/">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04%20Conditioning%20on%20Events/">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../05%20Bayes%20Theorem%20for%20Events/">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../06%20Homework/">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../02%20Marginalization/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../04%20Conditioning%20on%20Events/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#conditioning-for-random-variables">Conditioning for Random Variables</a></li>
+        
+            <li class="second-level"><a href="#exercise-conditioning-for-random-variables">Exercise: Conditioning for Random Variables</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-simpsons-paradox">Exercise: Simpson's Paradox</a></li>
+            
+                <li class="third-level"><a href="#department-a">Department A:</a></li>
+            
+                <li class="third-level"><a href="#department-b">Department B:</a></li>
+            
+                <li class="third-level"><a href="#department-c">Department C</a></li>
+            
+                <li class="third-level"><a href="#department-d">Department D:</a></li>
+            
+                <li class="third-level"><a href="#department-e">Department E</a></li>
+            
+                <li class="third-level"><a href="#department-f">Department F</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#more-general-story-for-conditioning">More General Story for Conditioning</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="conditioning-for-random-variables">Conditioning for Random Variables</h2>
+<p>When we observe that a random variable takes on a specific value (such as $W=\text {rainy}$ from earlier for which we say that we condition on random variable $W$ taking on the value “rainy"), this observation can affect what we think are likely or unlikely values for another random variable.</p>
+<p>When we condition on $W=\text {rainy}$, we do a two-step procedure; first, we only keep the row for $W$ corresponding to the observed value:</p>
+<p><img src="../images/images_sec-joint-rv-cond-restrict.png" alt="Drawing" style="width: 400px;"/></p>
+<p>Second, we “normalize" the table so that its entries add up to $1$, which corresponds to dividing it by the sum of the entries, which is equal to $p_{W}(\text {rainy})$ in this case:</p>
+<p><img src="../images/images_sec-joint-rv-cond-renormalize.png" alt="Drawing" style="width: 400px;"/></p>
+<p><strong>Notation:</strong> The resulting probability table $p_{T\mid W}(\cdot \mid \text {rainy})$ is associated with the random variable denoted $(T\mid W=\text {rainy})$; we use “∣" to denote that we're conditioning on things to the right of “∣" happening (these are things that we have observed or that we are given as having happened). We read $"T\mid W=\text {rainy}"$ as either “$T$ given $W$ is rainy" or “$T$ conditioned on $W$ being rainy". To refer to specific entries of the table, we write, for instance,</p>
+<p>
+<script type="math/tex; mode=display">p_{T\mid W}(\text {cold}\mid \text {rainy})=\mathbb {P}(T=\text {cold}\mid W=\text {rainy})=\frac{4}{5}.</script>
+</p>
+<p>In general:</p>
+<p><strong>Conditioning:</strong> Consider two random variables $X$ and $Y$ (that take on values in the sets $\mathcal{X}$ and $\mathcal{Y}$ respectively) with joint probability table $p_{X,Y}$ (from which by marginalization we can readily compute the marginal probability table pY). For any $x∈\mathcal{X}$ and $y∈\mathcal{Y}$ such that $p_{Y}(y)&gt;0$, the <em>conditional probability</em> of event $X=x$ given event $Y=y$ has happened is</p>
+<p>
+<script type="math/tex; mode=display">p_{X\mid Y}(x\mid y)\triangleq \frac{p_{X,Y}(x,y)}{p_{Y}(y)}.</script>
+</p>
+<p>For example,</p>
+<p>
+<script type="math/tex; mode=display">p_{T\mid W}(\text {cold}\mid \text {rainy})=\frac{p_{W,T}(\text {rainy},\text {cold})}{p_{W}(\text {rainy})}=\frac{\frac{2}{15}}{\frac{1}{6}}=\frac{4}{5}.</script>
+</p>
+<p><strong>Computational interpretation:</strong> To compute $p_{X\mid Y}(x\mid y)$, take the entry $p_{X,Y}(x,y)$ in the joint probability table corresponding to $X=x$ and $Y=y$, and then divide the entry by $p_{Y}(y)$, which is an entry in the marginal probability table $p_Y$ for random variable $Y$.</p>
+<h3 id="exercise-conditioning-for-random-variables">Exercise: Conditioning for Random Variables</h3>
+<p>Consider the following two joint probability tables.</p>
+<p><img src="../images/images_sec-joint-rv-ex-marg.png" alt="Drawing" style="width: 400px;"/></p>
+<p><strong>Question 1:</strong> What is $p_{W|I}(\text {sunny}|1)$?</p>
+<pre><code class="python">p_W_I = {
+    'sunny': {1: 1/2},
+    'rainy': {0: 1/6},
+    'snowy': {0: 1/3}
+}
+
+p_W = {}
+for key, value in p_W_I.items():
+    p_W_value = 0
+    for key1, value1 in value.items():
+        p_W_value += value1
+
+    p_W[key] = p_W_value
+
+p_W
+
+p_I = {}
+for key, value in p_W_I.items():
+    for key1, value1 in value.items():
+        if key1 not in p_I:
+#             print(key1, value1)
+            p_I[key1] = value1
+
+        else:
+            p_I[key1] += value1
+
+p_I 
+</code></pre>
+
+<pre><code>{0: 0.5, 1: 0.5}
+</code></pre>
+<pre><code class="python"># p_W_I('sunny', 1)
+p_W_I['sunny'][1]/p_I[1]
+</code></pre>
+
+<pre><code>1.0
+</code></pre>
+<p><strong>Question 2:</strong> What is $p_{X|Y}(\text {sunny}|1)$?</p>
+<pre><code class="python">p_X_Y = {
+    'sunny': {1: 1/4 ,  0: 1/4 },
+    'rainy': {1: 1/12,  0: 1/12},
+    'snowy': {1: 1/6 ,  0: 1/6 }
+}
+
+p_X = {}
+for key, value in p_X_Y.items():
+    p_X_value = 0
+    for key1, value1 in value.items():
+        p_X_value += value1
+
+    p_X[key] = p_X_value
+
+p_X
+
+p_Y = {}
+for key, value in p_X_Y.items():
+    for key1, value1 in value.items():
+        if key1 not in p_Y:
+            p_Y[key1] = value1
+
+        else:
+            p_Y[key1] += value1
+
+p_Y     
+</code></pre>
+
+<pre><code>{0: 0.5, 1: 0.5}
+</code></pre>
+<pre><code class="python"># p_X_Y('sunny', 1)
+p_X_Y['sunny'][1]/p_Y[1]
+</code></pre>
+
+<pre><code>0.5
+</code></pre>
+<p><strong>Question 3:</strong> What is $p_{I|W}(1|\text {snowy})$? </p>
+<pre><code class="python"># p_W_I['snowy'][1] = p_Y_X[1]['snowy]
+try:
+    p_W_I['snowy'][1]/p_I['snowy']
+except:
+    print(0)
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<p><strong>Question 4:</strong> What is $p_{Y|X}(1|\text {snowy})$?</p>
+<pre><code class="python"># p_X_Y['snowy'][1] = p_Y_X[1]['snowy]
+p_X_Y['snowy'][1]/p_X['snowy']
+</code></pre>
+
+<pre><code>0.5
+</code></pre>
+<h3 id="exercise-simpsons-paradox">Exercise: Simpson's Paradox</h3>
+<p>This problem looks at a real-life situation in which a school was accused of gender bias, seemingly admitting more men than women.</p>
+<p>We have the data encoded as a 3D joint probability table across three random variables $G$ for gender (either female or male), $D$ for the department someone applied to (there are 6 departments in consideration, which for simplicity we will just call A, B, C, D, E, and F), and $A$ for the admissions decision (either admitted or rejected).</p>
+<p>Thus, $p_{G,D,A}(\text {female},\text {C},\text {admitted})$ refers to the probability that a woman applying to department C gets admitted.</p>
+<p>The joint probability table is provided in the file <a href="../simpsons_paradox_data.py">simpsons_paradox_data.py</a>. Please download that and make sure it's in the same working directory as your IPython prompt (the same way you were able to import comp_prob_inference.py).</p>
+<p>Now let's load in everything from <code>simpsons_paradox_data.py</code>:</p>
+<pre><code class="python">from simpsons_paradox_data import *
+</code></pre>
+
+<p>Please open up <code>simpsons_paradox_data.py</code> to see what Python variables you have access to, and to see how we can turn a probability space represented as a Python dictionary into the 3D joint probability table, stored as a 3D NumPy array.</p>
+<p>For example, to get the probability that a woman applied to department C and got admitted, you can enter into the prompt:</p>
+<pre><code class="python">joint_prob_table[gender_mapping['female'], department_mapping['C'], admission_mapping['admitted']]
+</code></pre>
+
+<p><strong>Some terminology:</strong> In Python, especially when we deal with NumPy arrays higher than 2 dimensions, talking about rows and columns is confusing. We will instead refer to the different axes as axis 0 (in this case: gender), axis 1 (in this case: department), axis 2 (in this case: admission decision), and so forth if we have more than 3 dimensions.</p>
+<p>Let's see what the paradox is. First, let's look at the probability that women were admitted vs the probability that men were admitted. This means that we are going to marginalize out the department (again, this is axis 1).</p>
+<p>Marginalization is easy to do with NumPy:</p>
+<pre><code class="python">joint_prob_gender_admission = joint_prob_table.sum(axis=1)
+</code></pre>
+
+<p>On the right-hand side,<code>.sum(axis=1)</code> says to sum across axis 1 so that we no longer have axis 1! This means that the Python variable <code>joint_prob_gender_admission</code> stores a 2D joint probability table for random variables $G$ and $A$.</p>
+<p>Now, for example, the probability that a woman applies and is admitted is given by:</p>
+<pre><code class="python">joint_prob_gender_admission[gender_mapping['female'], admission_mapping['admitted']]
+</code></pre>
+
+<p>Now let's do some conditioning to see what the probability is of being admitted given that the applicant is female. Remember, what we want is the following conditional probability:</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+p_{A|G}(\text{admitted} | \text{female})
+&=&
+\frac{p_{A,G}(\text{admitted}, \text{female})}
+     {p_G(\text{female})} \\
+&=&
+\frac{p_{A,G}(\text{admitted}, \text{female})}
+     {\sum_a p_{A,G}(a, \text{female})} \\
+&=&
+\frac{p_{A,G}(\text{admitted}, \text{female})}
+     {p_{A,G}(\text{admitted}, \text{female})
+      + p_{A,G}(\text{rejected}, \text{female})}.
+\end{eqnarray}</script>
+</p>
+<p>Let's restrict the joint probability table of $G$ and $A$ so that we only look at when $G = \text {female}$:</p>
+<pre><code class="python">female_only = joint_prob_gender_admission[gender_mapping['female']]
+</code></pre>
+
+<p>Now this corresponds to a vector that we have to normalize to be 1 to get a valid conditional probability table!</p>
+<pre><code class="python">prob_admission_given_female = female_only / np.sum(female_only)
+</code></pre>
+
+<p>This is the right conditional probability table, represented as an array. To get it into the dictionary format we've been dealing with earlier in the course, we do:</p>
+<pre><code class="python">prob_admission_given_female_dict = dict(zip(admission_labels, prob_admission_given_female))
+print(prob_admission_given_female_dict)
+</code></pre>
+
+<pre><code class="python">from simpsons_paradox_data import *
+</code></pre>
+
+<p><strong>Question:</strong> What is $\mathbb {P}(A = \text {admitted} | G = \text {female})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">joint_prob_gender_admission = joint_prob_table.sum(axis=1)
+female_only = joint_prob_gender_admission[gender_mapping['female']]
+prob_admission_and_female = joint_prob_gender_admission[gender_mapping['female'], admission_mapping['admitted']]
+prob_admitted_given_female = prob_admission_and_female/ np.sum(female_only)
+print(&quot;Probability of admitted female: {0:.5f}&quot;.format(prob_admitted_given_female))
+</code></pre>
+
+<pre><code>Probability of admitted female: 0.30334
+</code></pre>
+<p><strong>Question:</strong> What is $\mathbb {P}(A = \text {admitted} | G = \text {male})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">male_only = joint_prob_gender_admission[gender_mapping['male']]
+prob_admission_and_male = joint_prob_gender_admission[gender_mapping['male'], admission_mapping['admitted']]
+prob_admitted_given_male = prob_admission_and_male / np.sum(male_only)
+print(&quot;Probability of admitted male: {0:.5f}&quot;.format(prob_admitted_given_male))
+</code></pre>
+
+<pre><code>Probability of admitted male: 0.44520
+</code></pre>
+<p>So it looks like there's some gender bias going on! Let's investigate by looking at how things differ by each department.</p>
+<p>But before we do so, we just wanted to say a word about conditioning in code on axes aside from axis 0. With our 2D joint probability table of $G$ and $A$, to condition on admission decision instead, there's a slightly different syntax in Python. Let's condition on being admitted:</p>
+<pre><code class="python">admitted_only = joint_prob_gender_admission[:, admission_mapping['admitted']]
+</code></pre>
+
+<p>Notice that we had to put a “:,". That is to indicate that we want to keep everything in the 0-th axis. We didn't have to do this when we conditioned on a value in the 0-th axis, since it is implied that you want everything in the axis 1 in that case.</p>
+<p>Thus, the conditional probability table of gender given admitted is:</p>
+<pre><code class="python">prob_gender_given_admitted = admitted_only / np.sum(admitted_only)
+prob_gender_given_admitted_dict = dict(zip(gender_labels, prob_gender_given_admitted))
+print(prob_gender_given_admitted_dict)
+</code></pre>
+
+<p>All right, now let's look at which departments are favoring men over women.</p>
+<p>For the following part, we will condition on both $G$ and $D$ taking on specific values together. For example, to only look at the entries in the 3D joint probability table for when $G=\text{female}$ and, at the same time, $D=A$, then we can do the following:</p>
+<pre><code class="python">female_and_A_only = joint_prob_table[gender_mapping['female'], department_mapping['A']]
+</code></pre>
+
+<p>Now let's determine the probability of getting admitted given each gender and each department.</p>
+<h4 id="department-a">Department A:</h4>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {female}, D = \text {A})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python"># A: admitted, F: female
+p_A_F_A = joint_prob_table[gender_mapping['female'], department_mapping['A'], \
+                           admission_mapping['admitted']]
+p_R_F_A = joint_prob_table[gender_mapping['female'], department_mapping['A'], \
+                           admission_mapping['rejected']]
+p_A_given_F_and_A = p_A_F_A / (p_A_F_A + p_R_F_A)
+print(&quot;Probability of admitted female in department A: {0:.3f}&quot;.format(p_A_given_F_and_A))
+</code></pre>
+
+<pre><code>Probability of admitted female in department A: 0.820
+</code></pre>
+<h5 id="general-approach">General Approach</h5>
+<pre><code class="python"># Taking admitted only
+joint_prob_admitted = joint_prob_table[:,:,admission_mapping['admitted']]
+# Summing admitted and rejected
+joint_prob_gen_and_dep = joint_prob_table.sum(axis=2)
+# Taking admitted only / Summing admitted and rejected
+prob_admitted_given_gen_and_dep = joint_prob_admitted/joint_prob_gen_and_dep
+prob_admitted_given_gen_and_dep
+</code></pre>
+
+<pre><code>array([[ 0.82,  0.68,  0.34,  0.35,  0.24,  0.07],
+       [ 0.62,  0.63,  0.37,  0.33,  0.28,  0.06]])
+</code></pre>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['female'], department_mapping['A']]
+</code></pre>
+
+<pre><code>0.8200000000000004
+</code></pre>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {male}, D = \text {A})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['male'], department_mapping['A']]
+</code></pre>
+
+<pre><code>0.62000000000000011
+</code></pre>
+<h4 id="department-b">Department B:</h4>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {female}, D = \text {B})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['female'], department_mapping['B']]
+</code></pre>
+
+<pre><code>0.67999999999999705
+</code></pre>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {male}, D = \text {B})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['male'], department_mapping['B']]
+</code></pre>
+
+<pre><code>0.63000000000000034
+</code></pre>
+<h4 id="department-c">Department C</h4>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {female}, D = \text {C})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['female'], department_mapping['C']]
+</code></pre>
+
+<pre><code>0.34000000000000008
+</code></pre>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {male}, D = \text {C})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['male'], department_mapping['C']]
+</code></pre>
+
+<pre><code>0.37000000000000005
+</code></pre>
+<h4 id="department-d">Department D:</h4>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {female}, D = \text {D})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['female'], department_mapping['D']]
+</code></pre>
+
+<pre><code>0.34999999999999998
+</code></pre>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {male}, D = \text {D})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['male'], department_mapping['D']]
+</code></pre>
+
+<pre><code>0.3300000000000004
+</code></pre>
+<h4 id="department-e">Department E</h4>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {female}, D = \text {E})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['female'], department_mapping['E']]
+</code></pre>
+
+<pre><code>0.23999999999999955
+</code></pre>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {male}, D = \text {E})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['male'], department_mapping['D']]
+</code></pre>
+
+<pre><code>0.3300000000000004
+</code></pre>
+<h4 id="department-f">Department F</h4>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {female}, D = \text {F})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['female'], department_mapping['F']]
+</code></pre>
+
+<pre><code>0.069999999999999701
+</code></pre>
+<p>What is $\mathbb {P}(A = \text {admitted} | G = \text {male}, D = \text {F})$? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places.)</p>
+<pre><code class="python">prob_admitted_given_gen_and_dep[gender_mapping['male'], department_mapping['D']]
+</code></pre>
+
+<pre><code>0.3300000000000004
+</code></pre>
+<p><strong>Question:</strong> How many of these departments have a higher probability of admitting women than of admitting men?</p>
+<pre><code class="python">for index, value in enumerate(np.diff(prob_admitted_given_gen_and_dep, axis=0)[0]):
+    if value &lt; 0:
+        print(department_labels[index])
+</code></pre>
+
+<pre><code>A
+B
+D
+F
+</code></pre>
+<p>Somehow, it seems that when we marginalized out the department, the gender bias is going one direction, yet when looking at the specific departments, most departments seem to be having the bias go the other direction!</p>
+<p><strong>Take-away message:</strong> We have to be very careful when interpreting conditional probabilities! Also, marginalization (which lumps different groups of data together, where here the groups are departments) can reverse trends that appear in specific groups!</p>
+<h2 id="more-general-story-for-conditioning">More General Story for Conditioning</h2>
+<p>Jointly distributed random variables play a central role in this course. Remember that we will model observations as random variables and the quantities we want to infer also as random variables. When these random variables are jointly distributed so that we have a probabilistic way to describe how they relate (through their joint probability table), then we can systematically and quantitatively produce inferences.</p>
+<p>We just saw how to condition on a random variable taking on a specific value. What about if we wanted to condition on a random variable taking on any one of of many values rather just one specific value? To answer this question, we look at a more general story of conditioning which is in terms of events.</p>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

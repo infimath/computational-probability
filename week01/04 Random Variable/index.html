@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>04 Random Variable - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week02/01%20Jointly%20Distributed%20Random%20Variables/">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/02%20Marginalization/">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/03%20Conditioning%20for%20Random%20Variables/">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/04%20Conditioning%20on%20Events/">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/05%20Bayes%20Theorem%20for%20Events/">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week02/06%20Homework/">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../03%20Probabilities%20with%20Events%20and%20Code/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../week02/01%20Jointly%20Distributed%20Random%20Variables/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#random-variable">Random Variable</a></li>
+        
+            <li class="second-level"><a href="#two-ways-to-specify-a-random-variable-in-code">Two Ways to Specify a Random Variable in Code</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#random-variables-notation-and-terminology">Random Variables Notation and Terminology</a></li>
+        
+            <li class="second-level"><a href="#exercise">Exercise</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-probability-with-dice">Exercise: Probability with Dice</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-functions-of-random-variables">Exercise: Functions of Random Variables</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="random-variable">Random Variable</h2>
+<p>To mathematically reason about a random variable, we need to somehow keep track of the full range of possibilities for what the random variable's value could be, and how probable different instantiations of the random variable are. The resulting formalism may at first seem a bit odd but as we progress through the course, it will become more apparent how this formalism helps us study real-world problems and address these problems with powerful solutions.</p>
+<p>To build up to the formalism, first note, computationally, what happened in the code in the previous part.</p>
+<ol>
+<li>First, there is an underlying probability space $(Ω,P)$, where $\Omega = { \text {sunny}, \text {rainy}, \text {snowy}}$, and</li>
+</ol>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+\mathbb{P}(\text{sunny}) &=& 1/2, \\
+\mathbb{P}(\text{rainy}) &=& 1/6, \\
+\mathbb{P}(\text{snowy}) &=& 1/3.
+\end{eqnarray}</script>
+</p>
+<ol>
+<li>
+<p>A random outcome $ω∈Ω$ is sampled using the probabilities given by the probability space (Ω,P). This step corresponds to an underlying experiment happening.</p>
+</li>
+<li>
+<p>Two random variables are generated:</p>
+<ul>
+<li>
+<p>W is set to be equal to ω. As an equation:
+<script type="math/tex; mode=display">\begin{eqnarray}
+W(\omega) &=&\omega\quad\text{for }\omega\in\{\text{sunny},\text{rainy},\text{snowy}\}.
+\end{eqnarray}</script>
+This step perhaps seems entirely unnecessary, as you might wonder “Why not just call the random outcome $W$ instead of $ω$?" Indeed, this step isn't actually necessary for this particular example, but the formalism for random variables has this step to deal with what happens when we encounter a random variable like $I$.</p>
+</li>
+<li>
+<p>$I$ is set to $1$ if $ω=\text{sunny}$, and $0$ otherwise. As an equation:
+<script type="math/tex; mode=display">\begin{eqnarray}
+I(\omega)
+&=&
+\begin{cases}
+  1 & \text{if }\omega=\text{sunny}, \\
+  0 & \text{if }\omega\in\{\text{rainy},\text{snowy}\}.
+\end{cases}
+\end{eqnarray}</script>
+Importantly, multiple possible outcomes (rainy or snowy) get mapped to the same value $0$ that $I$ can take on.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>We see that random variable $W$ maps the sample space $\Omega ={ \text {sunny},\text {rainy},\text {snowy}}$ to the same set ${ \text {sunny},\text {rainy},\text {snowy}}$. Meanwhile, random variable I maps the sample space $\Omega ={ \text {sunny},\text {rainy},\text {snowy}}$ to the set ${0,1}$.</p>
+<p>In general:</p>
+<p><strong>Definition of a “finite random variable" (in this course, we will just call this a “random variable"):</strong> Given a finite probability space $(Ω,P)$, a finite random variable $X$ is a mapping from the sample space Ω to a set of values $X$ that random variable $X$ can take on. (We will often call $X$ the “alphabet" of random variable $X$.)</p>
+<p>For example, random variable $W$ takes on values in the alphabet ${ \text {sunny},\text {rainy},\text {snowy}}$, and random variable I takes on values in the alphabet ${0,1}$.</p>
+<p><strong>Quick summary:</strong> There's an underlying experiment corresponding to probability space $(Ω,P)$. Once the experiment is run, let $ω∈Ω$ denote the outcome of the experiment. Then the random variable takes on the specific value of $X(ω)∈X$.</p>
+<p><strong>Explanation using a picture:</strong> Continuing with the weather example, we can pictorially see what's going on by looking at the probability tables for: the original probability space, the random variable $W$, and the random variable $I$:</p>
+<p><img src="../images/images_sec-random-variables-main.png" rel="drawing" width=450></p>
+<p>These tables make it clear that a “random variable" really is just reassigning/relabeling what the values are for the possible outcomes in the underlying probability space (given by the top left table):</p>
+<ul>
+<li>
+<p>In the top right table, random variable $W$ does not do any sort of relabeling so its probability table looks the same as that of the underlying probability space.</p>
+</li>
+<li>
+<p>In the bottom left table, the random variable $I$ relabels/reassigns “sunny" to 1, and both “rainy" and “snowy" to $0$. Intuitively, since two of the rows now have the same label $0$, it makes sense to just combine these two rows, adding their probabilities $(16+13=12)$. This results in the bottom right table.</p>
+</li>
+</ul>
+<p><strong>Technical note:</strong> Even though the formal definition of a finite random variable doesn't actually make use of the probability assignment P, the probability assignment will become essential as soon as we talk about how probability works with random variables.</p>
+<h3 id="two-ways-to-specify-a-random-variable-in-code">Two Ways to Specify a Random Variable in Code</h3>
+<p><strong>Approach 1.</strong> Go with the mathematical definition of a random variable. First, specify what the underlying probability space is:</p>
+<pre><code class="python">import sys
+sys.path.append('../comp_prob_inference')
+from comp_prob_inference import *
+</code></pre>
+
+<pre><code class="python">prob_space = {'sunny': 1/2, 'rainy': 1/6, 'snowy': 1/3}
+</code></pre>
+
+<pre><code class="python">W_mapping = {'sunny': 'sunny', 'rainy': 'rainy', 'snowy': 'snowy'}
+I_mapping = {'sunny': 1, 'rainy': 0, 'snowy': 0}
+</code></pre>
+
+<pre><code class="python">random_outcome = sample_from_finite_probability_space(prob_space)
+W = W_mapping[random_outcome]
+I = I_mapping[random_outcome]
+</code></pre>
+
+<pre><code class="python">W
+</code></pre>
+
+<pre><code>'rainy'
+</code></pre>
+<p><strong>Approach 2.</strong> Remember how we wrote out probability tables for random variables W and I? Let's directly store these probability tables:</p>
+<pre><code class="python">W_table = {'sunny': 1/2, 'rainy': 1/6, 'snowy': 1/3}
+I_table = {0: 1/2, 1: 1/2}
+</code></pre>
+
+<pre><code class="python">W = sample_from_finite_probability_space(W_table)
+I = sample_from_finite_probability_space(I_table)
+</code></pre>
+
+<h2 id="random-variables-notation-and-terminology">Random Variables Notation and Terminology</h2>
+<p>In this course, we denote random variables with capital/uppercase letters, such as $X$, $W$, $I$, etc. We use the phrases “probability table", “probability mass function" (abbreviated as PMF), and “probability distribution" (often simply called a distribution) to mean the same thing, and in particular we denote the probability table for $X$ to be $p_X$ or $p_X(⋅)$.</p>
+<p>We write $p_X(x)$ to denote the entry of the probability table that has label $x∈X$ where $X$ is the set of values that random variable $X$ takes on. Note that we use lowercase letters like $x$ to denote variables storing nonrandom values. We can also look up values in a probability table using specific outcomes, e.g., from earlier, we have $p_W(\text{rainy})=1/6$ and $p_I(1)=1/2$.</p>
+<p>Note that we use the same notation as in math where a function f might also be written as $f(⋅)$ to explicitly indicate that it is the function of one variable. Both $f$ and $f(⋅)$ refer to a function whereas $f(x)$ refers to the value of the function $f$ evaluated at the point $x$.</p>
+<p>As an example of how to use all this notation, recall that a probability table consists of nonnegative entries that add up to $1$. In fact, each of the entries is at most $1$ (otherwise the numbers would add to more than $1$). For a random variable $X$ taking on values in $X$, we can write out these constraints as:</p>
+<p>
+<script type="math/tex; mode=display">0 \le p_ X(x) \le 1\quad \text {for all }x\in \mathcal{X}, \qquad \sum _{x \in \mathcal{X}} p_ X(x) = 1.</script>
+</p>
+<p>Often in the course, if we are making statements about all possible outcomes of $X$, we will omit writing out the alphabet $X$ explicitly. For example, instead of the above, we might write the following equivalent statement:</p>
+<p>
+<script type="math/tex; mode=display">0 \le p_ X(x) \le 1\quad \text {for all }x, \qquad \sum _ x p_ X(x) = 1.</script>
+</p>
+<h3 id="exercise">Exercise</h3>
+<p>Consider the following probability space:</p>
+<pre><code class="python">prob_space = {'cat': 0.2, 'dog':0.7, 'shark':0.1}
+</code></pre>
+
+<p>Let's define a random variable $X$ that maps 'cat' and 'dog' both to $5$, and 'shark' to $7$.</p>
+<p>What is the set of values that X can take on? Express your answer as a Python set.</p>
+<pre><code class="python">model = {'cat': 0.2, 'dog':0.7, 'shark':0.1}
+mapping = {'cat': 5, 'dog': 5, 'shark':7}
+</code></pre>
+
+<pre><code class="python">def PMF(mapping, model):
+    &quot;&quot;&quot;Returns to prob. dist. function for given probabiliy model and random variable
+
+    &gt;&gt;&gt; model = {'cat': 0.2, 'dog':0.7, 'shark':0.1}
+    &gt;&gt;&gt; mapping = {'cat': 5, 'dog':5, 'shark':7}
+    &gt;&gt;&gt; PMF(mapping, model)
+    {5: 0.8999999999999999, 7: 0.1}
+    &quot;&quot;&quot;
+
+    new_model = dict()
+    for key, value in mapping.items():
+        if value in new_model:
+            new_model[value] += model[key]
+
+        else:
+            new_model[value] = model[key]
+
+    return new_model
+
+if __name__ == &quot;__main__&quot;:
+    import doctest
+    doctest.testmod()
+</code></pre>
+
+<pre><code class="python">new_model = PMF(mapping, model)
+new_model
+</code></pre>
+
+<pre><code>{5: 0.8999999999999999, 7: 0.1}
+</code></pre>
+<pre><code class="python">X = set(new_model.keys())
+X
+</code></pre>
+
+<pre><code>{5, 7}
+</code></pre>
+<h3 id="exercise-probability-with-dice">Exercise: Probability with Dice</h3>
+<p>Let random variable $X$ be the sum of rolls of two fair six-sided dice with faces numbered $1$ through $6$.</p>
+<p>How many different values can $X$ can take on?</p>
+<pre><code class="python">two_dice = {(i+1, j+1): 1/36 for i in range(6) for j in range(6)}
+</code></pre>
+
+<pre><code class="python">mapping = {key: sum(key) for key, value in two_dice.items()}
+</code></pre>
+
+<pre><code class="python">X_sum = PMF(mapping, two_dice)
+X_sum
+</code></pre>
+
+<pre><code>{2: 0.027777777777777776,
+ 3: 0.05555555555555555,
+ 4: 0.08333333333333333,
+ 5: 0.1111111111111111,
+ 6: 0.1388888888888889,
+ 7: 0.16666666666666669,
+ 8: 0.1388888888888889,
+ 9: 0.1111111111111111,
+ 10: 0.08333333333333333,
+ 11: 0.05555555555555555,
+ 12: 0.027777777777777776}
+</code></pre>
+<p>What is the probability that $X=7$? (Hint: An earlier exercise asked you for the event that the two faces sum to $7$.)</p>
+<pre><code class="python">X_sum[7]
+</code></pre>
+
+<pre><code>0.16666666666666669
+</code></pre>
+<h3 id="exercise-functions-of-random-variables">Exercise: Functions of Random Variables</h3>
+<p>Consider the random variable $W$ that we have seen before, where $W=\text{sunny}$ with probability $1/2$, $W=\text{rainy}$ with probability $1/6$, and $W=\text{snowy}$ with probability $1/3$. Consider a function $f$ that maps 'sunny' and 'rainy' to $3$, and 'snowy' to $42$.</p>
+<pre><code class="python">model   = {'sunny': 1/2, 'rainy': 1/6, 'snowy': 1/3}
+mapping = {'sunny': 3, 'rainy': 3, 'snowy': 42}
+</code></pre>
+
+<p>$f(W)$ is also a random variable. Express the probability table for $f(W)$ as a Python dictionary. (Your answer should be the Python dictionary itself, and not the dictionary assigned to a variable, so please do not include, for instance, “prob_table =" before specifying your answer. You can use fractions. If you use decimals instead, please be accurate and use at least 5 decimal places.)</p>
+<pre><code class="python">new_model = PMF(mapping, model)
+new_model
+</code></pre>
+
+<pre><code>{3: 0.6666666666666666, 42: 0.3333333333333333}
+</code></pre>
+<p>Is $(f(W))^2$ also a random variable? If yes, provide the probability table for $(f(W))^2$ as a Python dictionary.</p>
+<pre><code class="python">model_square = {key: value**2 for key, value in new_model.items()}
+</code></pre>
+
+<pre><code class="python">def is_valid_model(model):
+    &quot;&quot;&quot;
+    Return true if the model is valid probabilistic model else retrun false.
+
+    &gt;&gt;&gt; is_valid_model({'hearts': 0, 'clubs': 0.4, 'diamonds': 0.7, 'spades': 0.2})
+    False
+
+    &gt;&gt;&gt; is_valid_model({'apple': 0.5, 'orange': 0.4, 'pear': 0.2, 'banana': -0.1})
+    False
+
+    &gt;&gt;&gt; is_valid_model({1: 0.4, 2: 0.3, 'cat': 0.3})
+    True
+    &quot;&quot;&quot;
+    sum_of_values = 0
+    for key, value in model.items():
+        if value &lt; 0:
+            return False 
+
+        else:
+            sum_of_values += value
+
+    if abs(sum_of_values - 1) &lt; 0.00001: 
+        return True
+
+    else:
+        return False
+        print(sum_of_values)
+
+if __name__ == &quot;__main__&quot;:
+    import doctest
+    doctest.testmod()
+</code></pre>
+
+<pre><code class="python">is_valid_model(model_square)
+</code></pre>
+
+<pre><code>False
+</code></pre>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

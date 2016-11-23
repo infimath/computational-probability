@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2016-11-19</lastmod>
+     <lastmod>2016-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,26 +12,104 @@
     
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/week01/01 Simulating Coin Filps/</loc>
+     <lastmod>2016-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/week01/02 Modeling Uncertainty/</loc>
+     <lastmod>2016-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/week01/03 Probabilities with Events and Code/</loc>
+     <lastmod>2016-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/week01/04 Random Variable/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/week02/01 Jointly Distributed Random Variables/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week02/02 Marginalization/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week02/03 Conditioning for Random Variables/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week02/04 Conditioning on Events/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week02/05 Bayes Theorem for Events/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week02/06 Homework/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/week03/01 Product Rule for Random Variables/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week03/02 Independence Structure/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week03/03 Conditional Independence/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/week03/04 Homework/</loc>
+     <lastmod>2016-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/week04/01 Expected Value/</loc>
+     <lastmod>2016-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>01 Jointly Distributed Random Variables - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/04%20Random%20Variable/">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02%20Marginalization/">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03%20Conditioning%20for%20Random%20Variables/">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04%20Conditioning%20on%20Events/">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../05%20Bayes%20Theorem%20for%20Events/">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../06%20Homework/">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../../week01/04%20Random%20Variable/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../02%20Marginalization/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#jointly-distributed-random-variables">Jointly Distributed Random Variables</a></li>
+        
+    
+        <li class="first-level "><a href="#representing-a-joint-probability-table-in-code">Representing a Joint Probability Table in Code</a></li>
+        
+            <li class="second-level"><a href="#approach-1-use-dictionaries-within-a-dictionary">Approach 1: Use dictionaries within a dictionary.</a></li>
+            
+        
+            <li class="second-level"><a href="#approach-2-use-a-2d-array">Approach 2: Use a 2D array.</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="jointly-distributed-random-variables">Jointly Distributed Random Variables</h2>
+<p>At the most basic level, inference refers to using an observation to reason about some unknown quantity. In this course, the observation and the unknown quantity are represented by random variables. The main modeling question is: How do these random variables relate?</p>
+<p>Let's build on our earlier weather example, where now another outcome of interest appears, the temperature, which we quantize into to possible values “hot" and “cold". Let's suppose that we have the following probability space:</p>
+<p><img src="../images/images_sec-joint-rv-prob-space.png" alt="Drawing" style="width: 400px;"/></p>
+<p>You can check that the nonnegative entries do add to $1$. If we let random variable $W$ be the weather (sunny, rainy, snowy) and random variable $T$ be the temperature (hot, cold), then notice that we could rearrange the table in the following fashion:</p>
+<p><img src="../images/images_sec-joint-rv-rearrange-table.png" alt="Drawing" style="width: 400px;"/></p>
+<p>When we talk about two separate random variables, we could view them either as a single “super" random variable that happens to consist of a pair of values (the first table; notice the label for each outcome corresponds to a pair of values), or we can view the two separate variables along their own different axes (the second table).</p>
+<p>The first table tells us what the underlying probability space is, which includes what the sample space is (just read off the outcome names) and what the probability is for each of the possible outcomes for the underlying experiment at hand.</p>
+<p>The second table is called a joint probability table $p_{W,T}$ for random variables $W$ and $T$, and we say that random variables $W$ and $T$ are jointly distributed with the above distribution. Since this table is a rearrangement of the earlier table, it also consists of nonnegative entries that add to $1$.</p>
+<p>The joint probability table gives probabilities in which $W$ and $T$ co-occur with specific values. For example, in the above, the event that “$W=\text{sunny}$" and the event that “$T=\text{hot}$" co-occur with probability $3/10$. Notationally, we write</p>
+<p>
+<script type="math/tex; mode=display">p_{W,T}(\text {sunny},\text {hot})=\mathbb {P}(W=\text {sunny},T=\text {hot})=\frac{3}{10}.</script>
+</p>
+<p><strong>Conceptual note:</strong> Given the joint probability table, we can easily go backwards and write out the first table above, which is the underlying probability space.</p>
+<p><strong>Preview of inference:</strong> Inference is all about answering questions like “if we observe that the weather is rainy, what is the probability that the temperature is cold?" Let's take a look at how one might answer this question.</p>
+<p>First, if we observe that it is rainy, then we know that “sunny" and “snowy" didn't happen so those rows aren't relevant anymore. So the space of possible realizations of the world has shrunk to two options now: $(W=\text {rainy},T=\text {hot})$ or $(W=\text {rainy},T=\text {cold})$. But what about the probabilities of these two realizations? It's not just $1/30$ and $2/15$ since these don't sum to $1$ — by observing things, adjustments can be made to the probabilities of different realizations but they should still form a valid probability space.</p>
+<p>Why not just scale both $1/30$ and $2/15$ by the same constant so that they sum to $1$? This can be done by dividing 1/30 and 2/15 by their sum:</p>
+<p>
+<script type="math/tex; mode=display">\text {hot:}\quad \frac{\frac{1}{30}}{\frac{1}{30}+\frac{2}{15}}=\frac{1}{5},\qquad \text {cold}:\quad \frac{\frac{2}{15}}{\frac{1}{30}+\frac{2}{15}}=\frac{4}{5}.</script>
+</p>
+<p>Now they sum to 1. It turns out that, given that we'ved observed the weather to be rainy, these are the correct probabilities for the two options “hot" and “cold". Let's formalize the steps. We work backwards, first explaining what the the denominator “$130+215=16$" above comes from.</p>
+<h2 id="representing-a-joint-probability-table-in-code">Representing a Joint Probability Table in Code</h2>
+<pre><code class="python">import sys
+sys.path.append('../comp_prob_inference')
+from comp_prob_inference import *
+</code></pre>
+
+<h3 id="approach-1-use-dictionaries-within-a-dictionary">Approach 1: Use dictionaries within a dictionary.</h3>
+<pre><code class="python">prob_W_T = {
+    'sunny' : {'hot': 3/10, 'cold': 1/5 },
+    'rainy' : {'hot': 1/30, 'cold': 2/15},
+    'snowy' : {'hot': 0   , 'cold': 1/3 }
+}
+</code></pre>
+
+<pre><code class="python">print_joint_prob_table_dict(prob_W_T)
+</code></pre>
+
+<pre><code>           cold       hot
+rainy  0.133333  0.033333
+snowy  0.333333  0.000000
+sunny  0.200000  0.300000
+</code></pre>
+<p>If we want the probability of $P(W=\text{rainy} \textrm{ and }T=\text{cold})$, we write:</p>
+<pre><code class="python">prob_W_T['rainy']['cold']
+</code></pre>
+
+<pre><code>0.13333333333333333
+</code></pre>
+<p><strong>NOTE:</strong> The problem with this representation is that, we can easily retrive a row but getting a column is ussually hard. But if the distribution is sparse(most entries are zero) then writing in dictiaonay will save a lot of space. </p>
+<h3 id="approach-2-use-a-2d-array">Approach 2: Use a 2D array.</h3>
+<p>Another approach is to directly store the joint probability table as a 2D array, separately keeping track of what the rows and columns are. We use a NumPy array (but really you could use Python lists within a Python list, much like how the previous approach used dictionaries within a dictionary; the indexing syntax changes only slightly):</p>
+<pre><code class="python">import numpy as np
+prob_W_T_rows = ['sunny', 'rainy', 'snowy']
+prob_W_T_cols = ['hot', 'cold']
+prob_W_T_array = np.array([[3/10, 1/5], [1/30, 2/15], [0, 1/3]])
+print_joint_prob_table_array(prob_W_T_array, prob_W_T_rows, prob_W_T_cols)
+</code></pre>
+
+<pre><code>            hot      cold
+sunny  0.300000  0.200000
+rainy  0.033333  0.133333
+snowy  0.000000  0.333333
+</code></pre>
+<p>If we want the probability of $P(W=\text{rainy} \textrm{ and }T=\text{cold})$, we write:</p>
+<pre><code class="python">prob_W_T_array[prob_W_T_rows.index('rainy'), prob_W_T_cols.index('cold')]
+</code></pre>
+
+<pre><code>0.13333333333333333
+</code></pre>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

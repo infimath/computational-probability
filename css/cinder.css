@@ -8,6 +8,8 @@ body {
     line-height: 1.7;
     background-color: #FFF;
     color: #343838;
+    background: url(../img/mkdocs-bg.png) repeat;
+    background-attachment:fixed;    
 }
 h1, h2, h3, h4, h5, h6 {
     font-family:'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>04 Conditioning on Events - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/04%20Random%20Variable/">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01%20Jointly%20Distributed%20Random%20Variables/">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02%20Marginalization/">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03%20Conditioning%20for%20Random%20Variables/">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../05%20Bayes%20Theorem%20for%20Events/">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../06%20Homework/">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../03%20Conditioning%20for%20Random%20Variables/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../05%20Bayes%20Theorem%20for%20Events/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#conditioning-on-events-intro">Conditioning on Events Intro</a></li>
+        
+            <li class="second-level"><a href="#exercise-conditioning-on-events">Exercise: Conditioning on Events</a></li>
+            
+        
+            <li class="second-level"><a href="#exercise-boy-or-girl-paradox">Exercise: Boy or Girl Paradox</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="conditioning-on-events-intro">Conditioning on Events Intro</h2>
+<p>Given two events $\mathcal{A}$ and $\mathcal{B}$ (both of which have positive probability), the $\mathbb {P}(\mathcal{A} | \mathcal{B})$ $i.e.$, the probability $\mathcal{A}$ given $\mathcal{B}$ is computed as</p>
+<p>
+<script type="math/tex; mode=display">\mathbb {P}(\mathcal{A} | \mathcal{B}) = \frac{\mathbb {P}(\mathcal{A} \cap \mathcal{B})}{\mathbb {P}(\mathcal{B})}. </script>
+</p>
+<p>Important: We account for observations using conditioning. It turns out that often we can solve inference problems <em>without</em> using random variables at all and only using events. In this sequence on “Conditioning on Events", to solve the problems presented, you should do them without using our machinery for random variables from earlier.</p>
+<p>Of course, later on in the course and even beyond the course, depending on the inference problem you're trying to solve, you may find it easier to use events and not random variables, or random variables and not events, or both random variables and events. But for now, let's make sure you can use events and not random variables!</p>
+<h3 id="exercise-conditioning-on-events">Exercise: Conditioning on Events</h3>
+<p>The six possible outcomes of a fair die roll are all equally likely.</p>
+<p><strong>Question:</strong> If we are told that the outcome of a roll is even, what is the probability that the outcome is $6$? (Please be precise with at least $3$ decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">dice = {i+1: 1/6 for i in range(6)}
+A = {i for i in dice if i % 2 == 0}
+B = {6}
+p_B_given_A = len(A &amp; B)/len(A) 
+p_B_given_A
+</code></pre>
+
+<pre><code>0.3333333333333333
+</code></pre>
+<p>Now suppose we roll two fair six-sided dice. Let $\mathcal{A}$ denote the event that the outcome of the roll of first die is an even number, and let $\mathcal{B}$ denote the event that the outcome of the second die roll is $3$.</p>
+<pre><code class="python">def prob_event(event, model):
+    &quot;&quot;&quot;
+    Gives the probability of event.
+
+    &gt;&gt;&gt; dice = {i+1: 1/6 for i in range(6)}
+    &gt;&gt;&gt; prob_event({1, 3, 6}, dice)
+    0.5
+
+    &gt;&gt;&gt; two_dice = {(i+1, j+1): 1/36 for i in range(6) for j in range(6)}
+    &gt;&gt;&gt; event = {(2, 3), (4, 3), (6, 3)}
+    &gt;&gt;&gt; prob_event(event, two_dice)
+    0.08333333333333333
+    &quot;&quot;&quot;
+    return sum([model[key] for key in event])
+
+if __name__ == &quot;__main__&quot;:
+    import doctest
+    doctest.testmod()    
+</code></pre>
+
+<p><strong>Question:</strong> Determine $\mathbb {P}(\mathcal{A} \cap \mathcal{B})$. To do this, first figure out what outcomes are contained in $\mathcal{A} \cap \mathcal{B}$. (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">from fractions import Fraction
+two_dice = {(i+1, j+1): 1/36 for i in range(6) for j in range(6)}
+A = {key for key in two_dice if key[0] % 2 == 0}
+B = {key for key in two_dice if key[1] == 3}
+print(Fraction(prob_event((A &amp; B), two_dice)).limit_denominator())
+</code></pre>
+
+<pre><code>1/12
+</code></pre>
+<p><strong>Question:</strong> Determine $\mathbb {P}(\mathcal{A} \cap \mathcal{B})$. To do this, first figure out what outcomes are contained in $\mathcal{A} \cap \mathcal{B}$. (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">print(Fraction(prob_event((A | B), two_dice)).limit_denominator())
+</code></pre>
+
+<pre><code>7/12
+</code></pre>
+<p><strong>Question:</strong> Determine $\mathbb {P}(\mathcal{A} | \mathcal{B})$. (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">print(Fraction(prob_event(A &amp; B, two_dice)/ prob_event(B, two_dice)).limit_denominator())
+</code></pre>
+
+<pre><code>1/2
+</code></pre>
+<h3 id="exercise-boy-or-girl-paradox">Exercise: Boy or Girl Paradox</h3>
+<p>Alice has two children. Let's look at the probability that both children are girls, given different observations. We'll assume that the underlying finite probability space is as follows for Alice's children:</p>
+<p><img alt="drawing" src="../images/images_sec-conditioning-events-boy-girl-paradox.png" width="400px"/></p>
+<p><strong>Question:</strong> What is the probability that both children are girls? (This is an unconditional probability in that we aren't given any observations.) (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">joint_prob = {(i, j): 1/4 for i in ['B', 'G'] for j in ['B', 'G']} 
+both_girl = {('G', 'G')}
+prob_event(both_girl, joint_prob)
+</code></pre>
+
+<pre><code>0.25
+</code></pre>
+<p><strong>Question:</strong> What is the probability that both children are girls given that the younger child is a girl? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">younger_girl = {key for key in joint_prob if key[1] == 'G'}
+prob_event(both_girl &amp; younger_girl, joint_prob) / prob_event(younger_girl, joint_prob)
+</code></pre>
+
+<pre><code>0.5
+</code></pre>
+<p><strong>Question:</strong> What is the probability that both children are girls given that at least one child is a girl? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">one_girl = {key for key in joint_prob if 'G' in key}
+prob_event(both_girl &amp; one_girl, joint_prob) / prob_event(one_girl, joint_prob)
+</code></pre>
+
+<pre><code>0.3333333333333333
+</code></pre>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

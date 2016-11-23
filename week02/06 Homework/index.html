@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>06 Homework - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/04%20Random%20Variable/">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01%20Jointly%20Distributed%20Random%20Variables/">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02%20Marginalization/">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03%20Conditioning%20for%20Random%20Variables/">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04%20Conditioning%20on%20Events/">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../05%20Bayes%20Theorem%20for%20Events/">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../05%20Bayes%20Theorem%20for%20Events/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#homework-problem-alice-hunts-dragons">Homework Problem: Alice Hunts Dragons</a></li>
+        
+    
+        <li class="first-level "><a href="#homework-problem-alices-coins">Homework Problem: Alice's Coins</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="homework-problem-alice-hunts-dragons">Homework Problem: Alice Hunts Dragons</h2>
+<p>When she is not calculating marginal distributions, Alice spends her time hunting dragons. For every dragon she encounters, Alice measures its fire power $X$ (measured on a scale from $1$ to $4$) and its roar volume $Y$ (measured on a scale from $1$ to $3$). She notices that the proportion of dragons with certain fire power and roar volume in the population behaves as the following function:</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+f(x,y) = \begin{cases} x^2+y^2 &\text{if } x \in \{1,2,4\} \text{ and } y \in \{1,3\} \\
+0 &\text{otherwise}. \end{cases}
+\end{eqnarray}</script>
+</p>
+<p>In other words, the joint probability table $p_{X,Y}$ is of the form</p>
+<p>
+<script type="math/tex; mode=display">p_{X,Y}(x,y) = c f(x, y) \qquad \text {for }x \in \{ 1, 2, 3, 4\} , y \in \{ 1, 2, 3\} ,</script>
+</p>
+<p>for some constant $c&gt;0$ that you will determine.</p>
+<p><strong>Question:</strong> Determine the constant $c$, which ensures that $p_{X,Y}$ is a valid probability distribution. (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">Ω = {(i, j) for i in range(1, 5) for j in range(1, 4)}
+from fractions import Fraction
+joint_X_Y = {(i, j): (i**2 + j**2) for i in {1, 2, 4} for j in {1, 3}}
+c = 1/sum(joint_X_Y.values())
+print(Fraction(c).limit_denominator())
+</code></pre>
+
+<pre><code>1/72
+</code></pre>
+<p><strong>Question:</strong> Determine $P(Y&lt;X)$. (Note that ${Y&lt;X}$ is an event. Think about what outcomes are in it.)</p>
+<p>(Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">Y_lt_X = {x for x in joint_X_Y if x[1] &lt; x[0]}
+prob_Y_lt_X = sum([joint_X_Y[x] for x in Y_lt_X]) * c
+print(Fraction(prob_Y_lt_X).limit_denominator())
+</code></pre>
+
+<pre><code>47/72
+</code></pre>
+<p><strong>Question:</strong> Determine $P(X&lt;Y)$. (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">X_lt_Y = {x for x in joint_X_Y if x[1] &gt; x[0]}
+prob_X_lt_Y = sum([joint_X_Y[x] for x in X_lt_Y]) * c
+print(Fraction(prob_X_lt_Y).limit_denominator())
+</code></pre>
+
+<pre><code>23/72
+</code></pre>
+<p><strong>Question:</strong> Determine $P(Y=X)$. (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">X_eq_Y = {x for x in joint_X_Y if x[1] == x[0]}
+prob_X_eq_Y = sum([joint_X_Y[x] for x in X_eq_Y]) * c
+print(Fraction(prob_X_eq_Y).limit_denominator())
+</code></pre>
+
+<pre><code>1/36
+</code></pre>
+<p><strong>Question:</strong> Determine $P(Y=3)$. (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">Y_eq_3 = {x for x in joint_X_Y if x[1] == 3}
+prob_Y_eq_3 = sum([joint_X_Y[x] for x in Y_eq_3]) * c
+print(Fraction(prob_Y_eq_3).limit_denominator())
+</code></pre>
+
+<pre><code>2/3
+</code></pre>
+<p><strong>Question:</strong> Find the probability tables for $p_X$ and $p_Y$. Express your answers as Python dictionaries. (Your answer should be the Python dictionary itself, and not the dictionary assigned to a variable, so please do not include, for instance, “prob_table =" before specifying your answer. You can use fractions. If you use decimals instead, please be accurate and use at least 5 decimal places.)</p>
+<p>$p_X$ probability table (the dictionary keys should be the Python integers 1, 2, 3, 4): </p>
+<pre><code class="python">prob_X = {i: 0 for i in range(1, 5)} # initialize the dictionary with 0 
+for key, values in joint_X_Y.items():
+    if key[0] in prob_X:
+        prob_X[key[0]] += values * c
+
+prob_X        
+</code></pre>
+
+<pre><code>{1: 0.16666666666666669, 2: 0.25, 3: 0, 4: 0.5833333333333333}
+</code></pre>
+<p>$p_Y$ probability table (the dictionary keys should be the Python integers 1, 2, 3): </p>
+<pre><code class="python">prob_Y = {i: 0 for i in range(1, 4)} # initialize the dictionary with 0 
+for key, values in joint_X_Y.items():
+    if key[1] in prob_Y:
+        prob_Y[key[1]] += values * c
+
+prob_Y
+</code></pre>
+
+<pre><code>{1: 0.33333333333333337, 2: 0, 3: 0.6666666666666666}
+</code></pre>
+<h2 id="homework-problem-alices-coins">Homework Problem: Alice's Coins</h2>
+<p>Alice has five coins in a bag: two coins are normal, two are double-headed, and the last one is double-tailed. She reaches into the bag and randomly pulls out a coin. Without looking at the coin she drew, she tosses it.</p>
+<p><strong>Question:</strong> What is the probability that once the coin lands, the side of the coin that is face-down is heads? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<p><strong>Answer:</strong> Let $X$ is the random variable for selecting the coin. Let $X = {F, H, T}$ takes values $F$ for fair coin, $H$ for double-headed coin and $T$ for double-tailed coin. Also $Y = {h, t}$ is the random variable for getting $h$ for face down head and $t$ for face down tail. Then the joint probability distribution is given by </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Y=h</th>
+<th>Y=t</th>
+<th>X<sub>marginal</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X=F</td>
+<td>1/5</td>
+<td>1/5</td>
+<td>2/5</td>
+</tr>
+<tr>
+<td>X=H</td>
+<td>2/5</td>
+<td>0</td>
+<td>2/5</td>
+</tr>
+<tr>
+<td>X=T</td>
+<td>0</td>
+<td>1/5</td>
+<td>1/5</td>
+</tr>
+<tr>
+<td>Y<sub>marginal</sub></td>
+<td>3/5</td>
+<td>2/5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The probability of getting face down head is given by marginal probibility $\mathbb{P}(Y=h) = 3/5$.</p>
+<p><strong>Question:</strong> The coin lands and shows heads face-up. What is the probability that the face-down side is heads? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<p><strong>Answer:</strong> This question asking about conditional probability 
+<script type="math/tex; mode=display">\mathbb{P}(X=H|Y=h) = \frac{\mathbb{P}(X=H, Y=h)}{\mathbb{P}(Y=h) } = \frac{2/5}{3/5} = \frac{2}{3} </script>
+</p>
+<p>Alice discards the first coin (the one from part (b) that landed and showed heads face-up), reaches again into the bag and draws out a random coin. Again, without looking at it, she tosses it.</p>
+<p><strong>Question:</strong> What is the probability that the coin shows heads face-up? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<p><strong>Answer:</strong> Let $Z$ is the random varable for getting second coin face-up heads or tails. Also note that the first coin with face-up heads is discarded. There are two possibiliy of getting heads on face-up if $X=F$ or $X=H$. Let $W$ is the random variable for withdrawing second coin. </p>
+<p>The joint probability distribution of $W$ and $Z$ given $X=F$, $i.e.$, $P(W,Z|X=F)$</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Z=h</th>
+<th>Z=t</th>
+<th align="center">W<sub>marginal</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W=F</td>
+<td>1/8</td>
+<td>1/8</td>
+<td align="center">1/4</td>
+</tr>
+<tr>
+<td>W=H</td>
+<td>1/2</td>
+<td>0</td>
+<td align="center">1/2</td>
+</tr>
+<tr>
+<td>W=T</td>
+<td>0</td>
+<td>1/4</td>
+<td align="center">1/4</td>
+</tr>
+<tr>
+<td>Z<sub>marginal</sub></td>
+<td>5/8</td>
+<td>3/8</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>The joint probability distribution of $W$ and $Z$ given $X=H$, $i.e.$, $P(W,Z|X=H)$</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Z=h</th>
+<th>Z=t</th>
+<th align="center">W<sub>marginal</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W=F</td>
+<td>1/4</td>
+<td>1/4</td>
+<td align="center">1/2</td>
+</tr>
+<tr>
+<td>W=H</td>
+<td>1/4</td>
+<td>0</td>
+<td align="center">1/4</td>
+</tr>
+<tr>
+<td>W=T</td>
+<td>0</td>
+<td>1/4</td>
+<td align="center">1/4</td>
+</tr>
+<tr>
+<td>Z<sub>marginal</sub></td>
+<td>1/2</td>
+<td>1/2</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Hence the probability of getting heads in face-up is given by</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align}
+\mathbb{P}(Z=h|Y=h) 
+&= \mathbb{P}(Z=h|X=F) \times \mathbb{P}(X=F|Y=h) + \mathbb{P}(Z=h|X=H) \times \mathbb{P}(X=H|Y=h) \\
+&= \mathbb{P}(Z=h|X=F) \times \frac{\mathbb{P}(X=F, Y=h)}{ \mathbb{P}(Y=h)} + \mathbb{P}(Z=h|X=H) \times \frac{\mathbb{P}(X=H, Y=h)}{ \mathbb{P}(Y=h)} \\
+&= \frac{5}{8} \times \frac{1/5}{3/5} + \frac{1}{2} \times \frac{2/5}{3/5}\\
+&= \frac{13}{24}
+\end{align}
+</script>
+</p>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

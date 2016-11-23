@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>05 Bayes Theorem for Events - Computational Probability</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../assets/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Computational Probability</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week01/01%20Simulating%20Coin%20Filps/">01 Simulating Coin Filps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/02%20Modeling%20Uncertainty/">02 Modeling Uncertainty</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/03%20Probabilities%20with%20Events%20and%20Code/">03 Probabilities with Events and Code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week01/04%20Random%20Variable/">04 Random Variable</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01%20Jointly%20Distributed%20Random%20Variables/">01 Jointly Distributed Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02%20Marginalization/">02 Marginalization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03%20Conditioning%20for%20Random%20Variables/">03 Conditioning for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04%20Conditioning%20on%20Events/">04 Conditioning on Events</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">05 Bayes Theorem for Events</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../06%20Homework/">06 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week03 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week03/01%20Product%20Rule%20for%20Random%20Variables/">01 Product Rule for Random Variables</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/02%20Independence%20Structure/">02 Independence Structure</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/03%20Conditional%20Independence/">03 Conditional Independence</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../week03/04%20Homework/">04 Homework</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../week04/01%20Expected%20Value/">01 Expected Value</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../04%20Conditioning%20on%20Events/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../06%20Homework/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#bayes-theorem-for-events">Bayes Theorem for Events</a></li>
+        
+    
+        <li class="first-level "><a href="#the-law-of-total-probability">The Law of Total Probability</a></li>
+        
+            <li class="second-level"><a href="#exercise-bayes-theorem-and-total-probability">Exercise: Bayes' Theorem and Total Probability</a></li>
+            
+        
+            <li class="second-level"><a href="#practice-problem-bayes-theorem-and-total-probability">Practice Problem: Bayes' Theorem and Total Probability</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#relating-conditioning-on-events-back-to-random-variables">Relating Conditioning on Events Back to Random Variables</a></li>
+        
+    
+        <li class="first-level "><a href="#random-variables-conditioned-on-events">Random Variables Conditioned on Events</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="bayes-theorem-for-events">Bayes Theorem for Events</h2>
+<p>Given two events $\mathcal{A}$ and $\mathcal{B}$ (both of which have positive probability), Bayes' theorem, also called Bayes' rule or Bayes' law, gives a way to compute $\mathbb {P}(\mathcal{A} | \mathcal{B})$ in terms of $\mathbb {P}(\mathcal{B} | \mathcal{A})$. This result turns out to be extremely useful for inference because often times we want to compute one of these, and the other is known or otherwise straightforward to compute.</p>
+<p>Bayes' theorem is given by</p>
+<p>
+<script type="math/tex; mode=display">\mathbb {P}(\mathcal{A} | \mathcal{B}) = \frac{\mathbb {P}(\mathcal{B} | \mathcal{A}) \mathbb {P}(\mathcal{A})}{\mathbb {P}(\mathcal{B})}.</script>
+</p>
+<p>The proof of why this is the case is a one liner:</p>
+<p>
+<script type="math/tex; mode=display">\mathbb {P}(\mathcal{A} | \mathcal{B}) \overset {(a)}{=} \frac{\mathbb {P}(\mathcal{A} \cap \mathcal{B})}{\mathbb {P}(\mathcal{B})} \overset {(b)}{=} \frac{\mathbb {P}(\mathcal{B} | \mathcal{A}) \mathbb {P}(\mathcal{A})}{\mathbb {P}(\mathcal{B})},</script>
+</p>
+<p>where step (a) is by the definition of conditional probability for events, and step (b) is due to the product rule for events (which follows from rearranging the definition of conditional probability for $\mathbb {P}(\mathcal{B} | \mathcal{A})$.</p>
+<h2 id="the-law-of-total-probability">The Law of Total Probability</h2>
+<p>If $B_1, \ldots, B_n$ are partition of sample space $\Omega$, Then </p>
+<p>
+<script type="math/tex; mode=display"> \mathbb{P}(A) = \sum_{i=1}^n \mathbb{P}(A \cap B_i)</script>
+</p>
+<h3 id="exercise-bayes-theorem-and-total-probability">Exercise: Bayes' Theorem and Total Probability</h3>
+<p>A new test is developed to determine whether a patient has an antibiotic-resistant bacterial infection. The test is correct $99\%$ of the time: that is, if a patient has the infection, there is a $99\%$ chance the test will return positive, and if a patient doesn't have the infection, there is a $99\%$ chance the test will return negative. Suppose $0.1\%$ of the general population has this infection. If a randomly selected person is administered this test and gets a positive result, what is the probability that she or he actually has the infection?</p>
+<p>To solve this problem, let $\mathcal{T}$ be the event that the patient has a positive test result, and $\mathcal{S}$ be the event that the patient has the associated bacterial infection. Thus, what the problem is asking for is precisely the quantity $\mathbb {P}(\mathcal{S} | \mathcal{T})$. So somehow we have to figure out what this probability is.</p>
+<p>What do we have access to? Well, from the problem statement, we are directly given the following quantities. What are they? Please provide the exact answer for these three quantities.</p>
+<ol>
+<li>
+<p>$\mathbb {P}(\mathcal{T} | \mathcal{S}) = 0.99$</p>
+</li>
+<li>
+<p>$\mathbb {P}(\mathcal{T}^ c | \mathcal{S}^ c) =0.99$</p>
+</li>
+<li>
+<p>$\mathbb {P}(\mathcal{S}) = 0.001$ </p>
+</li>
+</ol>
+<p>Let's see if Bayes' rule can help us:</p>
+<p>
+<script type="math/tex; mode=display">\mathbb {P}(\mathcal{S} | \mathcal{T}) = \frac{\mathbb {P}(\mathcal{T} | \mathcal{S}) \mathbb {P}(\mathcal{S})}{\mathbb {P}(\mathcal{T})}.</script>
+</p>
+<p>There's a slight problem. We don't know $\mathbb{P}(\mathcal{T})$, i.e., the probability that the patient has a positive test result. But let's break this into two cases. The patient either has the infection or not. So</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+\mathbb{P}(\mathcal{T})
+&=&
+\mathbb{P}(\text{patient has positive test result}) \\
+&=&
+\mathbb{P}(\text{patient has positive test result and patient has infection}) \\
+&&+
+\mathbb{P}(\text{patient has positive test result and patient does not have infection}) \\
+&=&
+\mathbb{P}(\mathcal{T} \cap \mathcal{S})
++ \mathbb{P}(\mathcal{T} \cap \mathcal{S}^c).
+\end{eqnarray}</script>
+</p>
+<p><strong>Question: What result did we just use?</strong></p>
+<p>[$\times    $] Bayes' Theorem<br>
+[$\times    $] Product Rule<br>
+[$\checkmark$] Law of Total Probability<br>
+[$\times    $] Marginalization</p>
+<p>We can go one step further:</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+\mathbb{P}(\mathcal{T})
+&=&
+\mathbb{P}(\mathcal{T} \cap \mathcal{S})
+  + \mathbb{P}(\mathcal{T} \cap \mathcal{S}^c) \\
+&=&
+\mathbb{P}(\mathcal{T} | \mathcal{S})\mathbb{P}(\mathcal{S})
+  + \mathbb{P}(\mathcal{T} | \mathcal{S}^c)\mathbb{P}(\mathcal{S}^c).
+\end{eqnarray}</script>
+</p>
+<p><strong>Question: In the last equality, what result did we use?</strong></p>
+<p>[$\times    $] Bayes' Theorem<br>
+[$\checkmark$] Product Rule<br>
+[$\times    $] Law of Total Probability<br>
+[$\times    $] Marginalization</p>
+<p>So what we have is:</p>
+<p>
+<script type="math/tex; mode=display">\mathbb {P}(\mathcal{S} | \mathcal{T}) = \frac{\mathbb {P}(\mathcal{T} | \mathcal{S}) \mathbb {P}(\mathcal{S})}{\mathbb {P}(\mathcal{T})} = \frac{\mathbb {P}(\mathcal{T} | \mathcal{S}) \mathbb {P}(\mathcal{S})}{\mathbb {P}(\mathcal{T} | \mathcal{S})\mathbb {P}(\mathcal{S}) + \mathbb {P}(\mathcal{T} | \mathcal{S}^ c)\mathbb {P}(\mathcal{S}^ c)}.</script>
+</p>
+<p>There are just two probabilities that we haven't figured out. But we can from the information we are given! Determine what the following are. Provide exact answers for these.</p>
+<ol>
+<li>
+<p>$\mathbb {P}(\mathcal{S}^ c) = 0.999$ </p>
+</li>
+<li>
+<p>$\mathbb {P}(\mathcal{T} | \mathcal{S}^ c) = 0.01$</p>
+</li>
+</ol>
+<p>Now we can plug in all the probabilities into our very last big equation above!</p>
+<p>What is $\mathbb {P}(\mathcal{S} | \mathcal{T})$, the probability that given a randomly selected person has a positive test result, she or he has the infection? (Please be precise with at least 3 decimal places, unless of course the answer doesn't need that many decimal places. You could also put a fraction.)</p>
+<pre><code class="python">(0.99 * 0.001) / (0.99 * 0.001 + 0.01 * 0.999) 
+</code></pre>
+
+<pre><code>0.09016393442622951
+</code></pre>
+<p>Does the probability seem low given how accurate the test is? Be sure to check out the solutions for a detailed explanation.</p>
+<h3 id="practice-problem-bayes-theorem-and-total-probability">Practice Problem: Bayes' Theorem and Total Probability</h3>
+<p>This problem gives practice for using Bayes' Theorem and the Law of Total Probability. The solution is provided on the next page. Please try to solve it before looking at the solution. Since this is a practice problem, you do not have to submit anything.</p>
+<p>Your problem set is due in 15 minutes! It's in one of your drawers, but they are messy, and you're not sure which one it's in.</p>
+<p>The probability that the problem set is in drawer $k$ is $d_k$. If drawer $k$ has the problem set and you search there, you have probability $p_k$ of finding it. There are a total of $m$ drawers.</p>
+<p>Suppose you search drawer $i$ and do not find the problem set.</p>
+<p>(a) Find the probability that the paper is in drawer $j$, where $j≠i$.</p>
+<p>(b) Find the probability that the paper is in drawer $i$.</p>
+<p><strong>Solution:</strong> Let $A_k$ be the event that the problem set is in drawer $k$, and $B_k$ be the event that you find the problem set in drawer $k$.</p>
+<p>(a) We'll express the desired probability as $\mathbb {P}(A_ j|B_ i^ c)$. Since this quantity is difficult to reason about directly, we'll use Bayes' rule:</p>
+<p>
+<script type="math/tex; mode=display">\mathbb {P}(A_ j|B_ i^ c) = \frac{\mathbb {P}(B_ i^ c | A_ j) \mathbb {P}(A_ j)}{\mathbb {P}(B_ i^ c)}</script>
+</p>
+<p>The first probability, $\mathbb {P}(B_ i^ c | A_ j)$, expresses the probability of not finding the problem set in drawer $i$ given that it's in a different drawer j. Since it's impossible to find the paper in a drawer it isn't in, this is just 1.</p>
+<p>The second quantity, $\mathbb{P}(A_j)$, is given to us in the problem statement as $d_j$.</p>
+<p>The third probability, $\mathbb {P}(B_ i^ c) = 1-\mathbb {P}(B_ i)$, is difficult to reason about directly. But, if we knew whether or not the paper was in the drawer, it would become easier. So, we'll use total probability:</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+            \mathbb{P}(B_i) &=& \mathbb{P}(B_i|A_i)\mathbb{P}(A_i) + \mathbb{P}(B_i|A_i^c)\mathbb{P}(A_i^c) \\
+            &=& p_i d_i + 0 (1-d_i)
+\end{eqnarray}</script>
+</p>
+<p>Putting these terms together, we find that</p>
+<p>
+<script type="math/tex; mode=display">\mathbb {P}(A_ j|B_ i^ c) = \frac{d_ j}{1-p_ i d_ i}</script>
+</p>
+<p><strong>Alternate method to compute the denominator $\mathbb{P}(B_i^c)$:</strong> We could use the law of total probability to decompose $\mathbb{P}(B_i^c)$ depending on which drawer the homework is actually in. We have</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+\mathbb{P}(B_i^c) &=& \sum_{k=1}^m
+               \underbrace{\mathbb{P}(A_k)}_{d_k}
+               \underbrace{\mathbb{P}(B_i^c|A_k)}_{\substack{1\text{ if }k\ne i,\\
+                                                     (1-p_i)\text{ if }k=i}} \\
+          &=& \sum_{\substack{k=1,\\
+                             k\ne i}}^m d_k
+             + (1-p_i)d_i \\
+          &=& \sum_{k=1}^m d_k - p_i d_i \\
+          &=& 1 - p_i d_i.
+\end{eqnarray}</script>
+</p>
+<p>(b) Similarly, we'll use Bayes' rule:</p>
+<p>
+<script type="math/tex; mode=display">\mathbb{P}(A_i | B_i^c) = \frac{\mathbb{P}(B_i^c | A_i) \mathbb {P}(A_i)}{\mathbb {P}(B_i^c)} = \frac{(1-p_i) d_i}{1 - p_i d_i}</script>
+</p>
+<h2 id="relating-conditioning-on-events-back-to-random-variables">Relating Conditioning on Events Back to Random Variables</h2>
+<p>We have alrady defined conditional probability in terms of events as follows</p>
+<p>
+<script type="math/tex; mode=display"> \mathbb{P}(B|A) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(A)}</script>
+</p>
+<p>Let $A = {X = x}$ and $B= {Y=y}$ are two events in terms of probability distribution. Then </p>
+<p>
+<script type="math/tex; mode=display">\mathbb{P}(Y=y|X=x) = \frac{\mathbb{P}(X=x,Y=y)}{\mathbb{P}(X=x)} = \frac{p_{X,Y}(x, y)}{p_X(x)}</script>
+</p>
+<p>If we fix the value of $x$ and change the value of $y$ then we get a new distribution called conditional distribution of $Y$ given $X$ as follows</p>
+<p>
+<script type="math/tex; mode=display">p_{Y\mid X}(y\mid x) = \sum_y p_{Y\mid X}(y\mid x) = 1</script>
+</p>
+<h2 id="random-variables-conditioned-on-events">Random Variables Conditioned on Events</h2>
+<p>Let $Y$ is a random variable takes values $1, 2, 3$ and $4$. The the conditional distribution of $Y$ given $A$ is given by </p>
+<p>
+<script type="math/tex; mode=display"> \mathbb{P}_{Y|A}(y) = \frac{\mathbb{P}(Y=y, A)}{\mathbb{P}(A)}</script>
+</p>
+<p><img src="../images/random_variable_conditioned_on_events.png" width=400 rel="drawing"></p>
+<pre><code class="python">
+</code></pre></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p><small>Copyright (c) 2016 Sandeep Suman<br></small></p>
+        
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="../../assets/mathjaxhelper.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
